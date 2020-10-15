@@ -1,0 +1,395 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:cloudSLA="http://ebiquity.umbc.edu/ontologies/itso/1.0/cloudSLA.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ebiquity.umbc.edu/ontologies/itso/1.0/cloudSLA.owl">
+  <owl:Ontology rdf:about="">
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ontology for Cloud services SLA</dc:title>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cloud SLA ontology has been developed by Karuna P Joshi for her PhD thesis, "Semantically rich Policy Based Framework to automate lifecycle of cloud based virtualized services"
+
+This ontology is available in public domain on the UMBC Ebiquity Website 
+since April 12, 2012.</rdfs:comment>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Karuna Pande Joshi</dc:creator>
+    <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cloud SLA ontology is copyrighted to Karuna P Joshi
+This ontology is available in public domain on the UMBC Ebiquity Website since April 12, 2012.</dc:rights>
+    <dc:subject rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cloud services, service level agreements</dc:subject>
+    <owl:imports rdf:resource="http://purl.org/goodrelations/v1"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="SLA_Support_metrics">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="Audit_name"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >SAS 70 Type II</owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Service_Availability"/>
+  <owl:Class rdf:ID="Encryption"/>
+  <owl:Class rdf:ID="Service_cost"/>
+  <owl:Class rdf:ID="SLA_Domain_Metrics"/>
+  <owl:Class rdf:ID="CloudSLA">
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Karuna Pande Joshi</dc:creator>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Service Level Agreement class</rdfs:comment>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="Pricing_currency">
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+    <rdfs:domain rdf:resource="#Service_cost"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="service_cost">
+    <rdfs:domain rdf:resource="#CloudSLA"/>
+    <rdfs:range rdf:resource="#Service_cost"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Cloud_Location">
+    <rdfs:domain rdf:resource="#CloudSLA"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMetrics">
+    <rdfs:domain rdf:resource="#CloudSLA"/>
+    <rdfs:range rdf:resource="#SLA_Support_metrics"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Service_Provider">
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#BusinessEntity"/>
+    <rdfs:domain rdf:resource="#CloudSLA"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEncryption">
+    <rdfs:range rdf:resource="#Encryption"/>
+    <rdfs:domain rdf:resource="#CloudSLA"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDomainSLA">
+    <rdfs:range rdf:resource="#SLA_Domain_Metrics"/>
+    <rdfs:domain rdf:resource="#CloudSLA"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="pricing_model">
+    <rdfs:domain rdf:resource="#Service_cost"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasAvailability">
+    <rdfs:range rdf:resource="#Service_Availability"/>
+    <rdfs:domain rdf:resource="#CloudSLA"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >service availability can be described as 95%, 99%, 99.5% etc.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Service_description">
+    <rdfs:domain rdf:resource="#CloudSLA"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#BusinessEntity"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Service_Consumer">
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#BusinessEntity"/>
+    <rdfs:domain rdf:resource="#CloudSLA"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="consumer_description">
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#BusinessEntity"/>
+    <rdfs:domain rdf:resource="#CloudSLA"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Service_Name">
+    <rdfs:domain rdf:resource="#CloudSLA"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#Brand"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="Cloud_instance_speed">
+    <rdfs:domain rdf:resource="#SLA_Domain_Metrics"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="pricing_cost">
+    <rdfs:domain rdf:resource="#Service_cost"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="outage_notification">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#time"
+          >00:05:00</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#SLA_Support_metrics"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="resolution_time">
+    <rdfs:domain rdf:resource="#SLA_Support_metrics"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#time"
+          >04:00:00</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="escalation_time">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#time"
+          >01:00:00</rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#SLA_Support_metrics"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Service_Delivery">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >INTERNET</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >MOBILE</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >BATCH_MODE</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >CLOUD</rdf:first>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#CloudSLA"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Encryption_type">
+    <rdfs:domain rdf:resource="#Encryption"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >DES2</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >DES</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >WAP</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="EE_CAL">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="#SLA_Domain_Metrics"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="availability_value">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="#Service_Availability"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="schd_maintenance">
+    <rdfs:domain rdf:resource="#SLA_Support_metrics"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="TIC_Connection">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >NOT COMPLIANT</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >COMPLIANT</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#SLA_Domain_Metrics"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="support_timeframe">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >24x7 support</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >WeekDay support</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >8-6 support</rdf:first>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#SLA_Support_metrics"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="VM_separation">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Supported</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Not Supported</rdf:first>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#SLA_Domain_Metrics"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Cloud_instance_cores">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="#SLA_Domain_Metrics"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="DataBackup">
+    <rdfs:domain rdf:resource="#SLA_Domain_Metrics"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >WEEKLY</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >HOTBACKUP</rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >DAILY</rdf:first>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Service_Interface">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >SOAP WSDL</rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >REST</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#SLA_Domain_Metrics"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="availability_terms">
+    <rdfs:domain rdf:resource="#Service_Availability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >terms describing service availability</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="response_time">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#time"
+          >00:10:00</rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#SLA_Support_metrics"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Cloud_instance_size">
+    <rdfs:domain rdf:resource="#SLA_Domain_Metrics"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="DataLocation">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >GLOBAL</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >US JURISDICTION</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >EU JURISDICTION</rdf:first>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#CloudSLA"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#Audit_name">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#SLA_Support_metrics"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="User_Authentication">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >FIPS-140 SUPPORTED</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >FIPS-140 NOT SUPPORTED</rdf:first>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#SLA_Domain_Metrics"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Defaulting_penalty">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Service_cost"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="recovery_time">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#time"
+          >01:00:00</rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#SLA_Support_metrics"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="business_continuity_plan">
+    <rdfs:domain rdf:resource="#SLA_Support_metrics"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:DataRange>
+    <owl:oneOf rdf:parseType="Resource">
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >SOAP</rdf:first>
+      </rdf:rest>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >REST</rdf:first>
+    </owl:oneOf>
+  </owl:DataRange>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.7, Build 620)  http://protege.stanford.edu -->
