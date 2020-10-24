@@ -46,7 +46,7 @@ core:Categorization	rdf:type	rdfs:Class ;
 	
 core:Consumer	rdf:type	rdfs:Class ;
 	rdfs:label	"Consumer" ;
-	rdfs:comment	"Consumers discover and subscribe to DataOfferings of interest via a marketplace in order to access the resources." ;
+	rdfs:comment	"Consumers discover and subscribe to DataOfferings of interest via api / interfaces in order to access the resources." ;
 	rdfs:subClassOf	schema:Thing .
 
 core:DataOffering	rdf:type	rdfs:Class ;
@@ -137,14 +137,14 @@ core:isProvidedBy	rdf:type	rdf:Property ;
 	
 core:isRegisteredBy	rdf:type	rdf:Property ;
 	rdfs:label	"isRegisteredBy" ;
-	rdfs:comment	"Relation between an DataOffering and the consumer who registered it." ;
+	rdfs:comment	"Relation between an DataOfferingQuery and the consumer who registered it." ;
 	schema:domainIncludes	core:DataOfferingQuery ;
 	schema:rangeIncludes	core:Consumer .
 	
 	
 core:dataOffering	rdf:type	rdf:Property ;
 	rdfs:label	"dataOffering" ;
-	rdfs:comment	"Relation between an DataOffering and the consumer who registered it." ;
+	rdfs:comment	"Relation between an DataOffering and the provider who registered it." ;
 	schema:inverseOf	core:isProvidedBy ;
 	schema:domainIncludes	core:Provider ;
 	schema:rangeIncludes	core:DataOffering .
