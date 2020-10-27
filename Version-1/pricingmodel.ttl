@@ -1,0 +1,277 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix core:	<http://example.org/core/> .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix commOn: <http://schema.big-iot.org/commOn/> .
+@prefix schema:	<http://schema.org/> .
+@prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ns: <http://creativecommOns.org/ns#>.
+@prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#>.
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix qudt: <http://data.qudt.org/qudt/owl/1.0.0/unit.owl#>.
+@prefix dul: <http://www.loa.istc.cnr.it/Ontologies/DUL.owl#>.
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix vann: <http://purl.org/vocab/vann/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix itso: <http://www.owl-Ontologies.com/itso> .
+@prefix pricingmodel: <http://www.owl-Ontologies.com/pricingmodel> .
+
+
+
+core: dc:cOntributor "Achille Zappa, NUIG, Galway"@en;
+                           
+            dc:descriptiOn ""@en;
+            dc:rights "Copyright NUIGalway,...";
+            dc:title " Pricing Model"@en;
+            dcterms:issued "2020"^^xsd:date;
+            dcterms:modified "2020"^^xsd:date;
+            vann:preferredNamespacePrefix "pricingmodel";
+            vann:preferredNamespaceUri "http://www.owl-Ontologies.com/pricingmodel#";
+            a owl:Ontology;
+            rdfs:comment " "@en;
+            rdfs:label ""^^xsd:string;
+            owl:versiOnInfo "0.1".
+
+
+
+
+
+##Classes
+
+
+
+
+
+
+
+pricingmodel:PricingModel	rdf:type	rdfs:Class ;
+	rdfs:label	"PricingModel" ;
+	rdfs:comment	"Pricing models for DataService / DataOfferings,  can also be free." .
+
+
+
+
+
+pricingmodel:PaymentType	rdf:type	rdfs:Class ;
+	rdfs:label	"PaymentType" ;
+	rdfs:comment	"Pricing models for DataService / DataOfferings,  can also be free." ;
+	owl:OneOf (pricingmodel:PaymentOnPlan pricingmodel:PaymentOnAPI pricingmodel:PaymentOnUnit pricingmodel:PaymentOnSize pricingmodel:PaymentOnSubscriptiOn pricingmodel:FreePrice).
+
+
+pricingmodel:RepeatBy	rdf:type	rdfs:Class ;
+	rdfs:label	"PricingModel" ;
+	rdfs:comment	"Pricing models for DataService / DataOfferings,  can also be free." ;
+	owl:OneOf (pricingmodel:DAY pricingmodel:MonTH pricingmodel:WEEK) .
+
+
+
+pricingmodel:Streams	rdf:type	rdfs:Class ;
+	rdfs:label	"Stream Data" ;
+	rdfs:comment	"Stream Data types for payment On Unit" .
+	
+	
+	
+	
+##EnumeratiOn Classes
+	
+	
+	
+pricingmodel:PaymentOnPlan	rdf:type	pricingmodel:PaymentType ;	
+		rdfs:label	"PaymentOnPlan" ;
+	rdfs:comment	"PaymentOnPlan pricing model" ;
+	skos:prefLabel	"PaymentOnPlan" .
+	
+	
+pricingmodel:PaymentOnAPI	rdf:type	pricingmodel:PaymentType ;	
+		rdfs:label	"PaymentOnAPI" ;
+	rdfs:comment	"PaymentOnAPI pricing model" ;
+	skos:prefLabel	"PaymentOnAPI" .
+
+pricingmodel:PaymentOnUnit	rdf:type	pricingmodel:PaymentType ;	
+		rdfs:label	"PaymentOnUnit" ;
+	rdfs:comment	"PaymentOnUnit pricing model" ;
+	skos:prefLabel	"PaymentOnUnit" .
+	
+pricingmodel:PaymentOnSize	rdf:type	pricingmodel:PaymentType ;	
+		rdfs:label	"PaymentOnSize" ;
+	rdfs:comment	"PaymentOnSize pricing model" ;
+	skos:prefLabel	"PaymentOnSize" .
+	
+pricingmodel:PaymentOnSubscription	rdf:type	pricingmodel:PaymentType ;	
+		rdfs:label	"PaymentOnSubscriptiOn" ;
+	rdfs:comment	"PaymentOnSubscriptiOn pricing model" ;
+	skos:prefLabel	"PaymentOnSubscriptiOn" .
+	
+
+pricingmodel:FreePrice	rdf:type	pricingmodel:PaymentType ;
+	rdfs:label	"FREE" ;
+	rdfs:comment	"FREE pricing model enumerated class for PaymentType" ;
+	skos:prefLabel	"FREE"  .	
+	
+
+
+
+
+pricingmodel:DAY	rdf:type	pricingmodel:RepeatBy ;
+	rdfs:label	"PER_DAY" ;
+	rdfs:comment	"Per day subscriptiOn repeted period" ;
+	skos:prefLabel	"Per Day" .
+	
+pricingmodel:MonTH	rdf:type	pricingmodel:RepeatBy ;
+	rdfs:label	"PER_MONTH" ;
+	rdfs:comment	"Per mOnth subscriptiOn repeted period" ;
+	skos:prefLabel	"Per Onth" .
+	
+pricingmodel:WEEK	rdf:type	pricingmodel:RepeatBy ;
+	rdfs:label	"PER_WEEK" ;
+	rdfs:comment	"Per week subscriptiOn repeted period" ;
+	skos:prefLabel	"Per Week" .	
+	
+	
+	
+	
+	
+	
+	
+##Properties	
+	
+	
+pricingmodel:basicPrice	rdf:type	rdf:Property ;
+	rdfs:label	"basicPrice" ;
+	rdfs:comment	"basicPrice" ;
+	schema:domainIncludes	pricingmodel:PricingModel ;
+	schema:rangeIncludes	schema:Text .
+
+
+
+	
+pricingmodel:hasPaymentType	rdf:type	rdf:Property ;
+	rdfs:label	"hasPaymentType" ;
+	rdfs:comment	"hasPaymentType" ;
+	schema:domainIncludes	pricingmodel:PricingModel ;
+	schema:rangeIncludes	pricingmodel:PaymentType .	
+	
+	
+	
+	
+	
+	
+	
+pricingmodel:hasPlanPrice	rdf:type	rdf:Property ;
+	rdfs:label	"hasPaymentType" ;
+	rdfs:comment	"hasPaymentType" ;
+	schema:domainIncludes	pricingmodel:PaymentOnPlan .
+	
+	
+	
+	
+pricingmodel:hasAPIPrice	rdf:type	rdf:Property ;
+	rdfs:label	"hasPaymentType" ;
+	rdfs:comment	"hasPaymentType" ;
+	schema:domainIncludes	pricingmodel:PaymentOnAPI .	
+	
+	
+	
+pricingmodel:hasUnitPrice	rdf:type	rdf:Property ;
+	rdfs:label	"hasPaymentType" ;
+	rdfs:comment	"hasPaymentType" ;
+	schema:domainIncludes	pricingmodel:PaymentOnUnit .	
+	
+	
+	
+pricingmodel:hasSizePrice	rdf:type	rdf:Property ;
+	rdfs:label	"hasPaymentType" ;
+	rdfs:comment	"hasPaymentType" ;
+	schema:domainIncludes	pricingmodel:PaymentOnSize	.
+	
+
+	
+pricingmodel:hasSubscriptionPrice	rdf:type	rdf:Property ;
+	rdfs:label	"hasPaymentType" ;
+	rdfs:comment	"hasPaymentType" ;
+	schema:domainIncludes	pricingmodel:PaymentOnSubscription .	
+	
+	
+
+pricingmodel:planDescription	rdf:type	rdf:Property ;
+	rdfs:label	"planDescriptiOn" ;
+	rdfs:comment	"planDescriptiOn" ;
+	schema:domainIncludes	pricingmodel:PaymentOnPlan ;
+	schema:rangeIncludes	schema:Text .	
+	
+
+pricingmodel:planDuration	rdf:type	rdf:Property ;
+	rdfs:label	"planDuration" ;
+	rdfs:comment	"planDuration" ;
+	schema:domainIncludes	pricingmodel:PaymentOnPlan ;
+	schema:rangeIncludes	schema:Text .	
+
+
+pricingmodel:dataUnit	rdf:type	rdf:Property ;
+	rdfs:label	"hasPaymentType" ;
+	rdfs:comment	"hasPaymentType" ;
+	schema:domainIncludes	pricingmodel:PaymentOnUnit  .	
+	
+	
+pricingmodel:unitID	rdf:type	rdf:Property ;
+	rdfs:label	"unitID	" ;
+	rdfs:comment	"unitID	" ;
+	schema:domainIncludes	pricingmodel:PaymentOnUnit  .	
+	
+
+pricingmodel:dataSize	rdf:type	rdf:Property ;
+	rdfs:label	"dataSize" ;
+	rdfs:comment	"dataSize for payment on Size" ;
+	schema:domainIncludes	pricingmodel:PaymentOnSize  .	
+
+	
+pricingmodel:timeDuration	rdf:type	rdf:Property ;
+	rdfs:label	"hasPaymentType" ;
+	rdfs:comment	"hasPaymentType" ;
+	schema:domainIncludes	pricingmodel:PaymentOnSubscription;
+	schema:rangeIncludes	schema:Text .	
+	
+	
+	
+pricingmodel:repeat	rdf:type	rdf:Property ;
+	rdfs:label	"hasPaymentType" ;
+	rdfs:comment	"hasPaymentType" ;
+	schema:domainIncludes	pricingmodel:PaymentOnSubscription ;
+	schema:rangeIncludes	pricingmodel:RepeatBy .	
+	
+	
+	
+pricingmodel:fromValue	rdf:type	rdf:Property ;
+	rdfs:label	"fromValue" ;
+	rdfs:comment	"SubscriptiOn valid from Value " ;
+	schema:domainIncludes	pricingmodel:PaymentOnSubscription;
+	schema:rangeIncludes	schema:DateTime .	
+	
+	
+pricingmodel:toValue	rdf:type	rdf:Property ;
+	rdfs:label	"toValue" ;
+	rdfs:comment	"SubscriptiOn valid to Value" ;
+	schema:domainIncludes	pricingmodel:PaymentOnSubscription;
+	schema:rangeIncludes	schema:DateTime .	
+	
+
+pricingmodel:numberObject	rdf:type	rdf:Property ;
+	rdfs:label	"numberObject" ;
+	rdfs:comment	"number of Objects for API Handle payments" ;
+	schema:domainIncludes	pricingmodel:PaymentOnAPI  .	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
