@@ -1,4 +1,4 @@
-# Data-Models
+# i3-Market Semantic Models
 
 Repository for sharing and managing models files
 
