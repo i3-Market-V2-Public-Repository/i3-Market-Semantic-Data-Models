@@ -416,6 +416,11 @@ core:serviceID	rdf:type	rdf:Property ;
 	rdfs:range 	rdfs:Literal .
 
 
+core:annotationPropoerty	rdf:type	rdf:Property ;
+	rdfs:label	"AnnotationPropoerty" ;
+	rdfs:comment	"Relation between an DataService and the serviceSpecs." ;
+	rdfs:domain	dcat:Dataset ;
+	 .
 
 
 
@@ -425,8 +430,7 @@ core:serviceID	rdf:type	rdf:Property ;
 
 
 
-
-
+## ==================================== ##
 	
 core:http_get	rdf:type	core:EndpointType ;
 	rdfs:label	"HTTP_GET" ;
