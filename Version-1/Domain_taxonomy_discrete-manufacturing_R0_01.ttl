@@ -1,0 +1,379 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix disman: <http://example.org/discrete-manufacturing#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/discrete-manufacturing> a skos:ConceptScheme;
+  dct:description "Vokabular für die diskrete Fertigung"@de, "vocabulary for the discrete manufacturing domain"@en;
+  dct:title "discrete manufacturing domain";
+  skos:hasTopConcept disman:descriptive_data, disman:operational_data .
+
+disman:product a skos:Concept;
+  skos:broader disman:descriptive_data;
+  skos:definition "A physical work piece that results from the manufacturing process.";
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:narrower disman:degree_of_completion, disman:geometry, disman:material_type,
+    disman:quality;
+  skos:notation "PROD";
+  skos:prefLabel "Product"@en, "Produkt"@de .
+
+disman:process a skos:Concept;
+  skos:broader disman:descriptive_data;
+  skos:definition "The type of process that manufactures a product.";
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:narrower disman:handling, disman:inspecting, disman:manufacturing, disman:storing,
+    disman:transporting;
+  skos:notation "PROC";
+  skos:prefLabel "Process"@en, "Prozess"@de .
+
+disman:resource a skos:Concept;
+  skos:broader disman:descriptive_data;
+  skos:definition "The resource that executes or supports a manufacturing process.";
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:narrower disman:auxiliaries, disman:fixtures, disman:human_resource, disman:physical_equipment,
+    disman:tools;
+  skos:notation "RES";
+  skos:prefLabel "Resource"@en, "Ressource"@de .
+
+disman:location a skos:Concept;
+  skos:broader disman:descriptive_data;
+  skos:definition "The location of physical resources in the manufacturing domain.";
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:narrower disman:building, disman:floor, disman:room, disman:site;
+  skos:notation "LOC";
+  skos:prefLabel "Location"@en, "Ort"@de .
+
+disman:descriptive_data a skos:Concept;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:narrower disman:location, disman:process, disman:product, disman:resource;
+  skos:notation "DESC";
+  skos:prefLabel "Beschreibungsdaten"@de, "Descriptive data"@en;
+  skos:topConceptOf <http://example.org/discrete-manufacturing> .
+
+disman:operational_data a skos:Concept;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:narrower disman:consumption_data, disman:performance_data;
+  skos:notation "OPER";
+  skos:prefLabel "Betriebsdaten"@de, "Operational data"@en;
+  skos:topConceptOf <http://example.org/discrete-manufacturing> .
+
+disman:geometry a skos:Concept;
+  skos:broader disman:product;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "GEO";
+  skos:prefLabel "Geometrie"@de, "Geometry"@en .
+
+disman:material_type a skos:Concept;
+  skos:broader disman:product;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:narrower disman:ceramics, disman:metallic_materials, disman:plastics, disman:wood;
+  skos:notation "MAT";
+  skos:prefLabel "Material type"@en, "Materialtyp"@de .
+
+disman:quality a skos:Concept;
+  skos:broader disman:product;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "QUAL";
+  skos:prefLabel "Quality"@en, "Qualität"@de .
+
+disman:manufacturing a skos:Concept;
+  skos:broader disman:process;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:narrower disman:additive_manufacturing, disman:changing_material_properties,
+    disman:coating, disman:forming, disman:joining, disman:primary_shaping, disman:separating;
+  skos:notation "MANU";
+  skos:prefLabel "Herstellen"@de, "Manufacturing"@en .
+
+disman:handling a skos:Concept;
+  skos:broader disman:process;
+  skos:definition "e.g. according to VDI 2860";
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "HANDL";
+  skos:prefLabel "Handhaben"@de, "Handling"@en .
+
+disman:transporting a skos:Concept;
+  skos:broader disman:process;
+  skos:definition "e.g. according to VDI 2411";
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "TRP";
+  skos:prefLabel "Transportieren"@de, "Transporting"@en .
+
+disman:storing a skos:Concept;
+  skos:broader disman:process;
+  skos:definition "e.g. according to VDI 2411";
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "STOR";
+  skos:prefLabel "Lagern"@de, "Storing"@en .
+
+disman:inspecting a skos:Concept;
+  skos:broader disman:process;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "INSP";
+  skos:prefLabel "Inspecting"@en, "Prüfen"@de .
+
+disman:physical_equipment a skos:Concept;
+  skos:broader disman:resource;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:narrower disman:auxiliary_equipment, disman:material_handling_equipment, disman:production_equipment;
+  skos:notation "PHEQ";
+  skos:prefLabel "Physical equipment"@en, "Physische Ressource"@de .
+
+disman:human_resource a skos:Concept;
+  skos:broader disman:resource;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "HUM";
+  skos:prefLabel "Human resource"@en, "Humanressource"@de .
+
+disman:auxiliaries a skos:Concept;
+  skos:broader disman:resource;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:narrower disman:compressed_air, disman:cooling_lubricant, disman:electricity,
+    disman:gas;
+  skos:notation "AUX";
+  skos:prefLabel "Auxiliaries"@en, "Hilfsmittel"@de .
+
+disman:tools a skos:Concept;
+  skos:broader disman:resource;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "TOOL";
+  skos:prefLabel "Tools"@en, "Werkzeuge"@de .
+
+disman:fixtures a skos:Concept;
+  skos:broader disman:resource;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "FIXT";
+  skos:prefLabel "Fixtures"@en, "Spannmittel"@de .
+
+disman:ceramics a skos:Concept;
+  skos:broader disman:material_type;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "CER";
+  skos:prefLabel "Ceramics"@en, "Keramik"@de .
+
+disman:metallic_materials a skos:Concept;
+  skos:broader disman:material_type;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "MET";
+  skos:prefLabel "Metallic materials"@en, "Metallische Werkstoffe"@de .
+
+disman:plastics a skos:Concept;
+  skos:broader disman:material_type;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "PLA";
+  skos:prefLabel "Kunststoffe"@de, "Plastics"@en .
+
+disman:wood a skos:Concept;
+  skos:broader disman:material_type;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "WOOD";
+  skos:prefLabel "Holz"@de, "Wood"@en .
+
+disman:additive_manufacturing a skos:Concept;
+  skos:broader disman:manufacturing;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "AM";
+  skos:prefLabel "Additive Fertigung"@de, "Additive manufacturing"@en .
+
+disman:changing_material_properties a skos:Concept;
+  skos:broader disman:manufacturing;
+  skos:definition "according to DIN 8580";
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "CMP";
+  skos:prefLabel "Changing material properties"@en, "Stoffeigenschaften ändern"@de .
+
+disman:coating a skos:Concept;
+  skos:broader disman:manufacturing;
+  skos:definition "according to DIN 8580";
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "COA";
+  skos:prefLabel "Beschichten"@de, "Coating"@en .
+
+disman:forming a skos:Concept;
+  skos:broader disman:manufacturing;
+  skos:definition "according to DIN 8580";
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "FOR";
+  skos:prefLabel "Forming"@en, "Umformen"@de .
+
+disman:joining a skos:Concept;
+  skos:broader disman:manufacturing;
+  skos:definition "according to DIN 8580";
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "JOI";
+  skos:prefLabel "Fügen"@de, "Joining"@en .
+
+disman:primary_shaping a skos:Concept;
+  skos:broader disman:manufacturing;
+  skos:definition "according to DIN 8580";
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "PSH";
+  skos:prefLabel "Primary shaping"@en, "Urformen"@de .
+
+disman:separating a skos:Concept;
+  skos:broader disman:manufacturing;
+  skos:definition "according to DIN 8580";
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "SEP";
+  skos:prefLabel "Separating"@en, "Trennen"@de .
+
+disman:degree_of_completion a skos:Concept;
+  skos:broader disman:product;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:narrower disman:finished_product, disman:partial_product, disman:raw_material;
+  skos:notation "DOC";
+  skos:prefLabel "Degree of completion"@en, "Fertigstellungsgrad"@de .
+
+disman:raw_material a skos:Concept;
+  skos:broader disman:degree_of_completion;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "RMAT";
+  skos:prefLabel "Raw material"@en, "Rohmaterial"@de .
+
+disman:partial_product a skos:Concept;
+  skos:broader disman:degree_of_completion;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "PP";
+  skos:prefLabel "Partial product"@en, "Teilprodukt"@de .
+
+disman:finished_product a skos:Concept;
+  skos:broader disman:degree_of_completion;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "FP";
+  skos:prefLabel "Fertiges Produkt"@de, "Finished product"@en .
+
+disman:production_equipment a skos:Concept;
+  skos:broader disman:physical_equipment;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "PEQ";
+  skos:prefLabel "Production equipment"@en, "Produktionsressource"@de .
+
+disman:material_handling_equipment a skos:Concept;
+  skos:broader disman:physical_equipment;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "MHEQ";
+  skos:prefLabel "Handhabungsressource"@de, "Material handling equipment"@en .
+
+disman:auxiliary_equipment a skos:Concept;
+  skos:broader disman:physical_equipment;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:narrower disman:air_conditioning_equipment, disman:compressor, disman:heating_equipment,
+    disman:ventilator;
+  skos:notation "AEQ";
+  skos:prefLabel "Auxiliary equipment"@en, "Hilfsressource"@de .
+
+disman:compressor a skos:Concept;
+  skos:broader disman:auxiliary_equipment;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "COMPR";
+  skos:prefLabel "Compressor"@en, "Kompressor"@de .
+
+disman:ventilator a skos:Concept;
+  skos:broader disman:auxiliary_equipment;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "VENT";
+  skos:prefLabel "Ventilator"@de, "Ventilator"@en .
+
+disman:heating_equipment a skos:Concept;
+  skos:broader disman:auxiliary_equipment;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "HEAT";
+  skos:prefLabel "Heating equipment"@en, "Heizung"@de .
+
+disman:air_conditioning_equipment a skos:Concept;
+  skos:broader disman:auxiliary_equipment;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "AC";
+  skos:prefLabel "Air conditioning equipment"@en, "Klimatisierung"@de .
+
+disman:compressed_air a skos:Concept;
+  skos:broader disman:auxiliaries;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "CAIR";
+  skos:prefLabel "Compressed air"@en, "Druckluft"@de .
+
+disman:cooling_lubricant a skos:Concept;
+  skos:broader disman:auxiliaries;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "CLUB";
+  skos:prefLabel "Cooling lubricant"@en, "Kühlschmierstoff"@de .
+
+disman:electricity a skos:Concept;
+  skos:broader disman:auxiliaries;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "ELEC";
+  skos:prefLabel "Electricity"@en, "Elektrizität"@de .
+
+disman:gas a skos:Concept;
+  skos:broader disman:auxiliaries;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "GAS";
+  skos:prefLabel "Gas"@de, "Gas"@en .
+
+disman:site a skos:Concept;
+  skos:broader disman:location;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "SITE";
+  skos:prefLabel "Site"@en, "Standort"@de .
+
+disman:building a skos:Concept;
+  skos:broader disman:location;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:narrower disman:hall, disman:office, disman:warehouse;
+  skos:notation "BUIL";
+  skos:prefLabel "Building"@en, "Gebäude"@de .
+
+disman:floor a skos:Concept;
+  skos:broader disman:location;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "FLO";
+  skos:prefLabel "Floor"@en, "Stockwerk"@de .
+
+disman:room a skos:Concept;
+  skos:broader disman:location;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "ROOM";
+  skos:prefLabel "Raum"@de, "Room"@en .
+
+disman:office a skos:Concept;
+  skos:broader disman:building;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "OFF";
+  skos:prefLabel "Büro"@de, "Office"@en .
+
+disman:hall a skos:Concept;
+  skos:broader disman:building;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "HALL";
+  skos:prefLabel "Hall"@en, "Werkshalle"@de .
+
+disman:warehouse a skos:Concept;
+  skos:broader disman:building;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "WH";
+  skos:prefLabel "Lagerhalle"@de, "Warehouse"@en .
+
+disman:performance_data a skos:Concept;
+  skos:broader disman:operational_data;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "PERF";
+  skos:prefLabel "Leistungsdaten"@de, "Performance data"@en .
+
+disman:consumption_data a skos:Concept;
+  skos:broader disman:operational_data;
+  skos:inScheme <http://example.org/discrete-manufacturing>;
+  skos:notation "CONS";
+  skos:prefLabel "Consumption data"@en, "Verbrauchsdaten"@de .
