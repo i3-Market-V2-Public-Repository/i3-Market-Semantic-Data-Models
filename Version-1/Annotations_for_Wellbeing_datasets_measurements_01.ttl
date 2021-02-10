@@ -1,0 +1,120 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix : <http://www.i3-market.eu/wellbeing_annotations#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+
+
+#------------------------------------->
+#----- Annotations Property Class individuals for welbeing measurements in dasasets------>
+#------------------------------------->
+
+
+
+:Complex_shape  a owl:NamedIndividual.
+
+
+:Presence a  owl:NamedIndividual.
+
+:Movement a  owl:NamedIndividual.
+
+:Opening a  owl:NamedIndividual.
+
+:Near_presence a  owl:NamedIndividual.
+
+:Micro_Awakening  a owl:NamedIndividual.
+
+:Av_snooze a  owl:NamedIndividual.
+
+:Sleep_duration  a owl:NamedIndividual.
+
+:Sleep_count_micro_awakenings a  owl:NamedIndividual.
+
+:Sleep_duration_micro_awakenings a  owl:NamedIndividual.
+
+:Sleep_count_awakenings  a owl:NamedIndividual.
+
+:Sleep_duration_awakenings a  owl:NamedIndividual.
+
+:Sleep_daily_summary a  owl:NamedIndividual.
+
+:Movement_daily_summary a  owl:NamedIndividual.
+
+:Door_daily_summary a  owl:NamedIndividual.
+
+:Toilet_daily_summary  a owl:NamedIndividual.
+
+:Sit_daily_summary a  owl:NamedIndividual.
+
+:Sleep_hourly_summary  a owl:NamedIndividual.
+
+:Movement_hourly_summary a  owl:NamedIndividual.
+
+:Door_hourly_summary a  owl:NamedIndividual.
+
+:Toilet_hourly_summary a  owl:NamedIndividual.
+
+:Sit_hourly_summary  a owl:NamedIndividual.
+
+:Sleep_hourly_probability_model  a owl:NamedIndividual.
+
+:Movement_hourly_probability_model a  owl:NamedIndividual.
+
+:Door_hourly_probability_model a  owl:NamedIndividual.
+
+:Toilet_hourly_probability_model  a owl:NamedIndividual.
+
+:Sit_hourly_probability_model a  owl:NamedIndividual.
+
+:Sleep_hourly_abnormal_score a  owl:NamedIndividual.
+
+:Movement_hourly_abnormal_score  a owl:NamedIndividual.
+
+:Door_hourly_abnormal_score a  owl:NamedIndividual.
+
+:Toilet_hourly_abnormal_score  a owl:NamedIndividual.
+
+:Sit_hourly_abnormal_score a  owl:NamedIndividual.
+
+:count_sleeps a  owl:NamedIndividual.
+
+:duration_min_sleep  a owl:NamedIndividual.
+
+:duration_max_sleep a  owl:NamedIndividual.
+
+:ADL_score a  owl:NamedIndividual.
+
+:ADL_score_low_warning a  owl:NamedIndividual.
+
+:ADL_score_high_warning  a owl:NamedIndividual.
+
+:ADL_score_low_alert a  owl:NamedIndividual.
+
+:ADL_score_high_alert a  owl:NamedIndividual.
+
+:Sleep_daily_anonaly  a owl:NamedIndividual.
+
+:Movement_daily_anomaly a  owl:NamedIndividual.
+
+:Door_daily_anomaly a  owl:NamedIndividual.
+
+:Toilet_daily_anomaly  a owl:NamedIndividual.
+
+:Sit_daily_anomaly a  owl:NamedIndividual.
+
+:Bed_Battery a  owl:NamedIndividual.
+
+:Presence_Battery a  owl:NamedIndividual.
+
+:Door_Battery a  owl:NamedIndividual.
+
+:Toilet_Battery a  owl:NamedIndividual.
+
+:Chair_Battery a  owl:NamedIndividual.
+
+:Bed_Data_quality  a owl:NamedIndividual.
+
+:Presence_Data_quality  a owl:NamedIndividual.
+
