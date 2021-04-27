@@ -1,0 +1,101 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix dc: <http://purl.org/dc/terms/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix void: <http://rdfs.org/ns/void#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+<http://i3.market.eu/auth/dataCatagory> dc:description "Categories for data offerings in i3-Market"@en;
+                                        dc:license <https://creativecommons.org/publicdomain/zero/1.0/>;
+                                        dc:modified "2021-01-31"^^xsd:date;
+                                        dc:title  "i3-Market Categories"@en;
+                                        a skos:ConceptScheme;
+                                        owl:versionInfo "Production 2020-10-30".
+<http://i3.market.eu/auth/dataCatagory/Agriculture> a skos:Concept;
+                                             skos:exactMatch <http://publications.europa.eu/resource/authority/data-theme/AGRI>;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Agriculture";
+                                             skos:prefLabel "Agriculture, fisheries, forestry and food"@en.
+<http://i3.market.eu/auth/dataCatagory/Culture> a skos:Concept;
+                                             skos:broadMatch <http://publications.europa.eu/resource/authority/data-theme/EDUC>;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Culture";
+                                             skos:prefLabel "Culture and sport"@en.
+<http://i3.market.eu/auth/dataCatagory/Economy> a skos:Concept;
+                                             skos:exactMatch <http://publications.europa.eu/resource/authority/data-theme/ECON>;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Economy";
+                                             skos:prefLabel "Economy and finance"@en.
+<http://i3.market.eu/auth/dataCatagory/Education> a skos:Concept;
+                                             skos:broadMatch <http://publications.europa.eu/resource/authority/data-theme/EDUC>;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Education";
+                                             skos:prefLabel "Education"@en.
+<http://i3.market.eu/auth/dataCatagory/Energy> a skos:Concept;
+                                             skos:exactMatch <http://publications.europa.eu/resource/authority/data-theme/ENER>;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Energy";
+                                             skos:prefLabel "Energy"@en.
+<http://i3.market.eu/auth/dataCatagory/Environment> a skos:Concept;
+                                             skos:exactMatch <http://publications.europa.eu/resource/authority/data-theme/ENVI>;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Environment";
+                                             skos:prefLabel "Environment"@en.
+<http://i3.market.eu/auth/dataCatagory/Government> a skos:Concept;
+                                             skos:exactMatch <http://publications.europa.eu/resource/authority/data-theme/GOVE>;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Government";
+                                             skos:prefLabel "Government and public sector"@en.
+<http://i3.market.eu/auth/dataCatagory/Health> a skos:Concept;
+                                             skos:exactMatch <http://publications.europa.eu/resource/authority/data-theme/HEAL>;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Health";
+                                             skos:prefLabel "Health"@en.
+<http://i3.market.eu/auth/dataCatagory/International> a skos:Concept;
+                                             skos:exactMatch <http://publications.europa.eu/resource/authority/data-theme/INTR>;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "International";
+                                             skos:prefLabel "International issues"@en.
+<http://i3.market.eu/auth/dataCatagory/Justice> a skos:Concept;
+                                             skos:exactMatch <http://publications.europa.eu/resource/authority/data-theme/JUST>;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Justice";
+                                             skos:prefLabel "Justice, legal system and public safety"@en.
+<http://i3.market.eu/auth/dataCatagory/Regions> a skos:Concept;
+                                             skos:exactMatch <http://publications.europa.eu/resource/authority/data-theme/REGI>;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Regions";
+                                             skos:prefLabel "Regions and cities"@en.
+<http://i3.market.eu/auth/dataCatagory/society> a skos:Concept;
+                                             skos:exactMatch <http://publications.europa.eu/resource/authority/data-theme/SOCI>;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "society";
+                                             skos:prefLabel  "Population and society"@en.
+<http://i3.market.eu/auth/dataCatagory/Science> a skos:Concept;
+                                             skos:exactMatch <http://publications.europa.eu/resource/authority/data-theme/TECH>;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Science";
+                                             skos:prefLabel "Science and technology"@en.
+<http://i3.market.eu/auth/dataCatagory/Transport> a skos:Concept;
+                                             skos:exactMatch <http://publications.europa.eu/resource/authority/data-theme/TRAN>;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Transport";
+                                             skos:prefLabel "Transport"@en.
+<http://i3.market.eu/auth/dataCatagory/Manufacturing> a skos:Concept;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Manufacturing";
+                                             skos:prefLabel "Manufacturing"@en.
+<http://i3.market.eu/auth/dataCatagory/Automotive> a skos:Concept;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Automotive";
+                                             skos:prefLabel "Automotive"@en.
+<http://i3.market.eu/auth/dataCatagory/Wellbeing> a skos:Concept;
+                                             skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
+                                             skos:notation "Wellbeing";
+                                             skos:prefLabel "Wellbeing"@en.                                             
+                                             
+                                             
+                                             
