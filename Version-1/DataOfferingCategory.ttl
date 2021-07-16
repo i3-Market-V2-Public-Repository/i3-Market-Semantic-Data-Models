@@ -69,7 +69,7 @@
                                              skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
                                              skos:notation "Regions";
                                              skos:prefLabel "Regions and cities"@en.
-<http://i3.market.eu/auth/dataCatagory/society> a skos:Concept;
+<http://i3.market.eu/auth/dataCatagory/Society> a skos:Concept;
                                              skos:exactMatch <http://publications.europa.eu/resource/authority/data-theme/SOCI>;
                                              skos:inScheme <http://i3.market.eu/auth/dataCatagory>;
                                              skos:notation "society";
