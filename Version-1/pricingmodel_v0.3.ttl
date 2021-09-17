@@ -324,8 +324,8 @@ pricingmodel:numberObject	rdf:type	rdf:Property ;
 	
 
 
-pricingmodel:hasFreePrice	rdf:type	rdf:Property ;
-	rdfs:label	"FreePricedataSize" ;
+pricingmodel:hasPriceFree	rdf:type	rdf:Property ;
+	rdfs:label	"hasPriceFree" ;
 	rdfs:comment	"The Data Asset is shared for Free" ;
 	rdfs:domain	pricingmodel:FreePrice  ;
 		rdfs:range 	rdfs:Literal .   ## "FREE"  
