@@ -120,7 +120,7 @@ pricingmodel:DAY	rdf:type	pricingmodel:RepeatBy ;
 	rdfs:comment	"Per day subscription repeted period" ;
 	skos:prefLabel	"Per Day" .
 	
-pricingmodel:MonTH	rdf:type	pricingmodel:RepeatBy ;
+pricingmodel:MONTH	rdf:type	pricingmodel:RepeatBy ;
 	rdfs:label	"PER_MONTH" ;
 	rdfs:comment	"Per month subscription repeted period" ;
 	skos:prefLabel	"Per month" .
