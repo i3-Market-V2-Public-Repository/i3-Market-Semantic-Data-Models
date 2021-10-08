@@ -265,8 +265,8 @@ pricingmodel:planDuration	rdf:type	rdf:Property ;
 
 
 pricingmodel:dataUnit	rdf:type	rdf:Property ;
-	rdfs:label	"hasPaymentType" ;
-	rdfs:comment	"hasPaymentType" ;
+	rdfs:label	"DataUnit" ;
+	rdfs:comment	"Data Unit Type" ;
 	rdfs:domain	pricingmodel:PaymentOnUnit  .	
 	
 	
