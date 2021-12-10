@@ -21,8 +21,9 @@
 @prefix contractmodel: <http://i3-market.eu/backplane/contractmodel> .
 
 
+<http://i3-market.eu/backplane/contractmodel> a owl:Ontology ;
 contractmodel: dc:contributor "Achille Zappa, NUIG, Galway"@en;
-                           
+                 dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;           
             dc:description ""@en;
             dc:rights "Copyright NUIGalway";
             dc:title " Core Model"@en;
