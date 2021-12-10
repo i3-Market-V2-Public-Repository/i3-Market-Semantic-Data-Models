@@ -22,7 +22,7 @@
 
 
 <http://i3-market.eu/backplane/contractmodel> a owl:Ontology ;
-contractmodel: dc:contributor "Achille Zappa, NUIG, Galway"@en;
+dc:contributor "Achille Zappa, NUIG, Galway"@en;
                  dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;           
             dc:description ""@en;
             dc:rights "Copyright NUIGalway";
@@ -34,7 +34,7 @@ contractmodel: dc:contributor "Achille Zappa, NUIG, Galway"@en;
             a owl:Ontology;
             rdfs:comment " "@en;
             rdfs:label ""^^xsd:string;
-            owl:versionInfo "0.1".
+            owl:versionInfo "0.2".
 
 
 
