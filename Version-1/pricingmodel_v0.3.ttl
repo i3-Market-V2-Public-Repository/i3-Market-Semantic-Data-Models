@@ -20,16 +20,16 @@
 @prefix pricingmodel: <http://i3-market.eu/backplane/pricingmodel> .
 
 
-
+<http://i3-market.eu/backplane/pricingmodel> a owl:Ontology ;
 core: dc:contributor "Achille Zappa, NUIG, Galway"@en;
-                           
+             dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;               
             dc:description ""@en;
             dc:rights "Copyright NUIGalway,...";
             dc:title " Pricing Model"@en;
             dcterms:issued "2020"^^xsd:date;
             dcterms:modified "2020"^^xsd:date;
             vann:preferredNamespacePrefix "pricingmodel";
-            vann:preferredNamespaceUri "http://www.owl-ontologies.com/pricingmodel#";
+            vann:preferredNamespaceUri "http://i3-market.eu/backplane/pricingmodel";
             a owl:Ontology;
             rdfs:comment " "@en;
             rdfs:label ""^^xsd:string;
