@@ -20,7 +20,7 @@
 @prefix pricingmodel: <http://i3-market.eu/backplane/pricingmodel> .
 
 
-
+<http://i3-market.eu/backplane/core/> a owl:Ontology ;
 core: dc:contributor "Achille Zappa, NUIG, Galway"@en;
                            
             dc:description ""@en;
