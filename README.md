@@ -29,7 +29,7 @@ Pricing/Cost Model
 SLA / SLO / SLS info
 
 ## Credits
-This repo whereas created by:
+This repo was created by:
 Achille Zappa <achille.zappa@nuigalway.ie>
 ## Contributing
 Contributions are always appreciated.
@@ -53,16 +53,13 @@ software under copyright law.
  dc:contributor "Achille Zappa, NUIG, Galway"@en;
             dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;                
             dc:description ""@en;
-            dc:rights "Copyright NUIGalway";
-            dc:title " Core Model"@en;
+            dc:rights "Copyright Achille Zappa, NUIGalway";
+            dc:title " i3-Market Semantic Models"@en;
             dcterms:issued "2020"^^xsd:date;
             dcterms:modified "2020"^^xsd:date;
-            vann:preferredNamespacePrefix "core";
-            vann:preferredNamespaceUri "http://i3-market.eu/backplane/core/";
-            a owl:Ontology;
             rdfs:comment " "@en;
-            rdfs:label ""^^xsd:string;
-            owl:versionInfo "0.999".
+          
+           
 
 The Documents in this repository are under license <https://creativecommons.org/licenses/by/4.0/> 
 
