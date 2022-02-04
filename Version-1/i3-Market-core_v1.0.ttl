@@ -56,9 +56,9 @@ core:DataMarket	rdf:type	rdfs:Class ;
 ## ==     DataMarket  - Properties   == ##
 ## ==================================== ## 
 
-core:dataMarketId	rdf:type	rdf:Property ;
-	rdfs:label	"DataMarketId" ;
-	rdfs:comment	"DataMarket identifier." ;
+core:marketId	rdf:type	rdf:Property ;
+	rdfs:label	"MarketId" ;
+	rdfs:comment	"Data Market identifier." ;
 	rdfs:domain	core:DataMarket ;
 	rdfs:range 	rdfs:Literal .
 
@@ -760,7 +760,7 @@ core:serviceSpecs	rdf:type	rdf:Property ;
 	rdfs:range 	itso:ServiceSpecs .
 	
 
-core:serviceID	rdf:type	rdf:Property ;
+core:serviceId	rdf:type	rdf:Property ;
 	rdfs:label	"serviceID" ;
 	rdfs:comment	"service ID" ;
 	rdfs:domain	dcat:DataService ;
@@ -830,14 +830,14 @@ core:measurementChannelType	rdf:type	rdf:Property ;
 	 .
 
 
-core:sensorID	rdf:type	rdf:Property ;
+core:sensorId	rdf:type	rdf:Property ;
 	rdfs:label	"sensorID" ;
 	rdfs:comment	"sensorID" ;
 	rdfs:domain	core:DatasetInformation  ;
 	 .
 
 
-core:deviceID	rdf:type	rdf:Property ;
+core:deviceId	rdf:type	rdf:Property ;
 	rdfs:label	"deviceID" ;
 	rdfs:comment	"deviceID" ;
 	rdfs:domain	core:DatasetInformation  ;
