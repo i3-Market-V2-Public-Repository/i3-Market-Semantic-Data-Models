@@ -1,0 +1,1969 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.owl-ontologies.com/itso.owl#"
+     xml:base="http://www.owl-ontologies.com/itso.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+          xmlns:itso="http://www.owl-ontologies.com/itso#">
+          
+    <owl:Ontology rdf:about="http://www.owl-ontologies.com/itso.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#type -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Certification_details -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Certification_details">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Service_Certification"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider_List"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#QoS_is_part_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#QoS_is_part_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Dependent_Service_Sub_contract"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Quality_of_Service"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#SLA_is_part_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#SLA_is_part_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Service_Contract"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Level_Agreement"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Sends_information_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Sends_information_to">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Service_Certification"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider-Class"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#contains_QoS_terms -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#contains_QoS_terms">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Quality_of_Service"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Dependent_Service_Sub_contract"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#contains_SLA_terms -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#contains_SLA_terms">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Service_Level_Agreement"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Contract"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#creates -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#creates">
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Specification"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer-Class"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#determine_quality_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#determine_quality_for">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#OWL_S-Composite_Service"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Dependent_Service"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Component"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Software_Component"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#determines_CSAT_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#determines_CSAT_for">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Software_Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#is_measured_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#is_measured_for">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Performance"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Reliability"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Dependent_Service"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Software_Component"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#issued_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#issued_by">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Consumer-Class"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Request_For_Service"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#issues -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#issues">
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Request_For_Service"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer-Class"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#must_include -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#must_include">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Specification"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Request_For_Service"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#negotiates_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#negotiates_for">
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Contract"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer-Class"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider-Class"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#refers_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#refers_to">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Provider_List"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Contract_Negotiation"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#refers_to_requirements -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#refers_to_requirements">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Request_For_Service"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Contract_Negotiation"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#requires_to_search -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#requires_to_search">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Request_For_Service"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Search_Engine"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#results_in_QoS -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#results_in_QoS">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Quality_of_Service"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider_Negotiation"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#results_in_SLA -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#results_in_SLA">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Service_Level_Agreement"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer_Negotiation"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#supplies -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#supplies">
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#OWL_S-Composite_Service"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer-Class"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#used_to_generate -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/itso.owl#used_to_generate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/itso.owl#Provider_List"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Certification"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Additional_constraints -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Additional_constraints">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Agent_Specs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Agent_Availabilty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Agent_Availabilty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Agent_Specs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Application_knowledge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Application_knowledge">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Agent_Specs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Certification_ID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Certification_ID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Certification"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Consumer_Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer_Description">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer-Class"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Consumer_ID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer_ID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer-Class"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Contract_Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Contract_Description">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Contract"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Customer_Support_expertise -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Customer_Support_expertise">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Component"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Domain -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Domain">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Functional_Specs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Domain_Knowledge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Domain_Knowledge">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Agent_Specs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Expected_Begin_Date_of_Service -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Expected_Begin_Date_of_Service">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Request_For_Service"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Expected_End_Date_of_Service -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Expected_End_Date_of_Service">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Request_For_Service"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Experience_Level -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Experience_Level">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Agent_Specs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Hardware_Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Hardware_Name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Hardware"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Memory -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Memory">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Hardware"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Model -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Model">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Hardware"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Operating_System"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Name_of_Service -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Name_of_Service">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Certification"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Nationality_constraint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Nationality_constraint">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Agent_Specs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#OS_knowledge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#OS_knowledge">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Agent_Specs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Permission -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Permission">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Provider -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Provider">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Certification"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Provider-Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Provider-Description">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider-Class"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Provider-ID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Provider-ID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider-Class"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Provider_Details -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Provider_Details">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Dependent_Service_Sub_contract"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Provider_Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Provider_Name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Dependent_Service_Sub_contract"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#QoS_Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#QoS_Description">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Quality_of_Service"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#QoS_Metrics -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#QoS_Metrics">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Quality_of_Service"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#QoS_Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#QoS_Name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Quality_of_Service"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#QoS_Penalty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#QoS_Penalty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Quality_of_Service"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#RFS_Respond_By_Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#RFS_Respond_By_Date">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Request_For_Service"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Requirements_phase_ontology_Class17 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Requirements_phase_ontology_Class17">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Role">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#SLA_Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#SLA_Description">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Level_Agreement"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#SLA_Metrics -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#SLA_Metrics">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Level_Agreement"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#SLA_Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#SLA_Name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Level_Agreement"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#SLA_Penalty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#SLA_Penalty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Level_Agreement"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_Availability -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Availability">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider_List"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_Cost -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Cost">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider_List"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_Cost_Constraint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Cost_Constraint">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Request_For_Service"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Description">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Specification"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_Details -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Details">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider_List"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_Domain -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Domain">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Request_For_Service"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Specification"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_Provider -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Provider">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider_List"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_Ranking -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Ranking">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Certification"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_domain_expertise -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Service_domain_expertise">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Component"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_lifecycle_ontology_Class12 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Service_lifecycle_ontology_Class12">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_lifecycle_ontology_Class38 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Service_lifecycle_ontology_Class38">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_lifecycle_ontology_Class5 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Service_lifecycle_ontology_Class5">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_lifecycle_ontology_Class6 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Service_lifecycle_ontology_Class6">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Task_Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Task_Description">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Functional_Specs"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Technical_expertise -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Technical_expertise">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Component"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Version -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#Version">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Operating_System"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#contract_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/itso.owl#contract_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Contract"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Compatible_Applications -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Compatible_Applications">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Human_Agent_Specs"/>
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Technical_Specs"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Consumer-Class -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer-Class">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Consumer_Negotiation -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer_Negotiation">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Contract_Negotiation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Contract -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Contract">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Contract_Negotiation -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Contract_Negotiation">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Dependent_Service -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Dependent_Service">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Dependent_Service_Sub_contract -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Dependent_Service_Sub_contract">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Contract"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Functional_Specs -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Functional_Specs">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Hardware -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Hardware">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Human_Agent_Specs"/>
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Technical_Specs"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Human_Agent_Specs -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Agent_Specs">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Human_Component -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Component">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Latency -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Latency">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Performance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#OWL_S-Composite_Service -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#OWL_S-Composite_Service">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Operating_System -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Operating_System">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Human_Agent_Specs"/>
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Technical_Specs"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Performance -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Performance">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Provider-Class -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Provider-Class">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Provider_List -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Provider_List">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Provider_Negotiation -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Provider_Negotiation">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Contract_Negotiation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Quality_of_Service -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Quality_of_Service">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Reliability -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Reliability">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Request_For_Service -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Request_For_Service">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Resolution_Time -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Resolution_Time">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Reliability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Response_Time -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Response_Time">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Performance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Security_Policy -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Security_Policy">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Security_policy -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Security_policy">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Reliability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#ServiceSpecifications -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#ServiceSpecs -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#ServiceSpecs"/>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_Certification -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Certification">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_Compliance -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Compliance">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_Contract -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Contract">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Contract"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_Level_Agreement -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Level_Agreement">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Service_Search_Engine -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Search_Engine">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Software_Component -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Software_Component">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Specification -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Specification">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Technical_Specs -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Technical_Specs">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Throughput -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Throughput">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Performance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Tier1_Agent -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Tier1_Agent">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Human_Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/itso.owl#Tier2_Expert_Agent -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/itso.owl#Tier2_Expert_Agent">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#Human_Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#ServiceSpecs -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#ServiceSpecs">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/itso.owl#ServiceSpecifications"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Component">
+        <rdfs:label>Human_Component</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Hardware_Name">
+        <rdfs:label>Hardware_Name</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_lifecycle_ontology_Class12">
+        <rdfs:label>Service_lifecycle_ontology_Class12</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#SLA_Penalty">
+        <rdfs:label>SLA_Penalty</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider-Description">
+        <rdfs:label>Provider-Description</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#QoS_Metrics">
+        <rdfs:label>QoS_Metrics</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Nationality_constraint">
+        <rdfs:label>Nationality_constraint</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Cost">
+        <rdfs:label>Service_Cost</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Expected_End_Date_of_Service">
+        <rdfs:label>Expected_End_Date_of_Service</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Search_Engine">
+        <rdfs:label>Service_Search_Engine</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Model">
+        <rdfs:label>Model</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider_List">
+        <rdfs:label>Provider_List</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Specification">
+        <rdfs:label>Specification</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#negotiates_for">
+        <rdfs:label>negotiates_for</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#results_in_SLA">
+        <rdfs:label>results_in_SLA</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Expected_Begin_Date_of_Service">
+        <rdfs:label>Expected_Begin_Date_of_Service</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Response_Time">
+        <rdfs:label>Response_Time</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Throughput">
+        <rdfs:label>Throughput</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#contains_QoS_terms">
+        <rdfs:label>contains_QoS_terms</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Availability">
+        <rdfs:label>Service_Availability</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#refers_to_requirements">
+        <rdfs:label>refers_to_requirements</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Compatible_Applications">
+        <rdfs:label>Compatible_Applications</rdfs:label>
+        <rdfs:comment>Will import existing ontologies on Computer Applications</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Operating_System">
+        <rdfs:label>Operating_System</rdfs:label>
+        <rdfs:comment>Will import existing ontologies on Computer Operating Systems</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#refers_to">
+        <rdfs:label>refers_to</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Contract_Description">
+        <rdfs:label>Contract_Description</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Certification_details">
+        <rdfs:label>Certification_details</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Security_policy">
+        <rdfs:label>Security_policy</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer_Description">
+        <rdfs:label>Consumer_Description</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Additional_constraints">
+        <rdfs:label>Additional_constraints</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Quality_of_Service">
+        <rdfs:label>Quality_of_Service</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_lifecycle_ontology_Class38">
+        <rdfs:label>Service_lifecycle_ontology_Class38</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Name">
+        <rdfs:label>Name</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#creates">
+        <rdfs:label>creates</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider-Class">
+        <rdfs:label>Provider-Class</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Latency">
+        <rdfs:label>Latency</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Level_Agreement">
+        <rdfs:label>Service_Level_Agreement</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#SLA_Name">
+        <rdfs:label>SLA_Name</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider">
+        <rdfs:label>Provider</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Application_knowledge">
+        <rdfs:label>Application_knowledge</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#QoS_Penalty">
+        <rdfs:label>QoS_Penalty</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#QoS_Description">
+        <rdfs:label>QoS_Description</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#QoS_is_part_of">
+        <rdfs:label>QoS_is_part_of</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#issued_by">
+        <rdfs:label>issued_by</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Dependent_Service">
+        <rdfs:label>Dependent_Service</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider_Details">
+        <rdfs:label>Provider_Details</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider_Name">
+        <rdfs:label>Provider_Name</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Hardware">
+        <rdfs:label>Hardware</rdfs:label>
+        <rdfs:comment>Will import existing ontologies on Computer Hardware.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Experience_Level">
+        <rdfs:label>Experience_Level</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Technical_expertise">
+        <rdfs:label>Technical_expertise</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Performance">
+        <rdfs:label>Performance</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#contract_id">
+        <rdfs:label>contract_id</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Security_Policy">
+        <rdfs:label>Security_Policy</rdfs:label>
+        <rdfs:comment>Will import REI ontology on Security Policy</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Functional_Specs">
+        <rdfs:label>Functional_Specs</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#issues">
+        <rdfs:label>issues</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#RFS_Respond_By_Date">
+        <rdfs:label>RFS_Respond_By_Date</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Certification_ID">
+        <rdfs:label>Certification_ID</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#OWL_S-Composite_Service">
+        <rdfs:label>OWL:S-Composite Service</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Contract_Negotiation">
+        <rdfs:label>Contract_Negotiation</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Cost_Constraint">
+        <rdfs:label>Service_Cost_Constraint</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Provider">
+        <rdfs:label>Service_Provider</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#QoS_Name">
+        <rdfs:label>QoS_Name</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#SLA_Metrics">
+        <rdfs:label>SLA_Metrics</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Requirements_phase_ontology_Class17">
+        <rdfs:label>Requirements_phase_ontology_Class17</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider_Negotiation">
+        <rdfs:label>Provider_Negotiation</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#used_to_generate">
+        <rdfs:label>used_to_generate</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Resolution_Time">
+        <rdfs:label>Resolution_Time</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Agent_Availabilty">
+        <rdfs:label>Agent_Availabilty</rdfs:label>
+        <rdfs:comment>available on part time, full time, 24x&amp; basis</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#is_measured_for">
+        <rdfs:label>is measured for</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Tier2_Expert_Agent">
+        <rdfs:label>Tier2_Expert_Agent</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Domain_Knowledge">
+        <rdfs:label>Domain_Knowledge</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Role">
+        <rdfs:label>Role</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Compliance">
+        <rdfs:label>Service_Compliance</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#determines_CSAT_for">
+        <rdfs:label>determines_CSAT_for</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#results_in_QoS">
+        <rdfs:label>results_in_QoS</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Human_Agent_Specs">
+        <rdfs:label>Human_Agent_Specs</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Permission">
+        <rdfs:label>Permission</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Version">
+        <rdfs:label>Version</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#supplies">
+        <rdfs:label>supplies</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Details">
+        <rdfs:label>Service_Details</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#SLA_Description">
+        <rdfs:label>SLA_Description</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Software_Component">
+        <rdfs:label>Software_Component</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Task_Description">
+        <rdfs:label>Task_Description</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#OS_knowledge">
+        <rdfs:label>OS_knowledge</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Ranking">
+        <rdfs:label>Service_Ranking</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#requires_to_search">
+        <rdfs:label>requires_to_search</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Name_of_Service">
+        <rdfs:label>Name_of_Service</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer_ID">
+        <rdfs:label>Consumer_ID</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#determine_quality_for">
+        <rdfs:label>determine_quality_for</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_lifecycle_ontology_Class6">
+        <rdfs:label>Service_lifecycle_ontology_Class6</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_lifecycle_ontology_Class5">
+        <rdfs:label>Service_lifecycle_ontology_Class5</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#must_include">
+        <rdfs:label>must_include</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Request_For_Service">
+        <rdfs:label>Request_For_Service</rdfs:label>
+        <rdfs:comment>Request for Service (RFS) is issued by the consumer to search Service providers and brokers on the cloud.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Certification">
+        <rdfs:label>Service_Certification</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Provider-ID">
+        <rdfs:label>Provider-ID</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Name">
+        <rdfs:label>Service_Name</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer_Negotiation">
+        <rdfs:label>Consumer_Negotiation</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Description">
+        <rdfs:label>Service_Description</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Domain">
+        <rdfs:label>Domain</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Technical_Specs">
+        <rdfs:label>Technical_Specs</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#SLA_is_part_of">
+        <rdfs:label>SLA_is_part_of</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Memory">
+        <rdfs:label>Memory</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Tier1_Agent">
+        <rdfs:label>Tier1_Agent</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Dependent_Service_Sub_contract">
+        <rdfs:label>Dependent Service Sub contract</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Customer_Support_expertise">
+        <rdfs:label>Customer_Support_expertise</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Reliability">
+        <rdfs:label>Reliability</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Sends_information_to">
+        <rdfs:label>Sends_information_to</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Domain">
+        <rdfs:label>Service_Domain</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Contract">
+        <rdfs:label>Contract</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_domain_expertise">
+        <rdfs:label>Service_domain_expertise</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Consumer-Class">
+        <rdfs:label>Consumer-Class</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#Service_Contract">
+        <rdfs:label>Service Contract</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.owl-ontologies.com/itso.owl#contains_SLA_terms">
+        <rdfs:label>contains_SLA_terms</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.0.1) http://owlapi.sourceforge.net -->
+
