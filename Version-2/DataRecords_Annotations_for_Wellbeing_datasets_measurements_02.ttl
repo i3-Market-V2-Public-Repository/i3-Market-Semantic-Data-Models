@@ -1,0 +1,224 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix : <http://www.i3-market.eu/wellbeing_annotations#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+
+
+#------------------------------------->
+#----- Annotations Property Class individuals for welbeing measurements in dasasets------>
+#------------------------------------->
+
+
+
+:Complex_shape  a owl:NamedIndividual;
+	rdfs:label	"Complex_shape" ;
+	rdfs:comment	"Complex_shape".
+
+
+:Presence a  owl:NamedIndividual;
+	rdfs:label	"Presence" ;
+	rdfs:comment	"Presence".
+
+:Movement a  owl:NamedIndividual;
+	rdfs:label	"Movement " ;
+	rdfs:comment	"Movement ".
+
+:Opening a  owl:NamedIndividual;
+	rdfs:label	"Opening" ;
+	rdfs:comment	"Opening".
+
+:Near_presence a  owl:NamedIndividual;
+	rdfs:label	"Near_presence" ;
+	rdfs:comment	"Near_presence".
+
+:Micro_Awakening  a owl:NamedIndividual;
+	rdfs:label	"Micro_Awakening" ;
+	rdfs:comment	"Micro_Awakening".
+
+:Av_snooze a  owl:NamedIndividual;
+	rdfs:label	"Av_snooze" ;
+	rdfs:comment	"Av_snooze".
+
+:Sleep_duration  a owl:NamedIndividual;
+	rdfs:label	"Sleep_duration" ;
+	rdfs:comment	"Sleep_duration".
+
+:Sleep_count_micro_awakenings a  owl:NamedIndividual;
+	rdfs:label	"Sleep_count_micro_awakenings" ;
+	rdfs:comment	"Sleep_count_micro_awakenings".
+
+:Sleep_duration_micro_awakenings a  owl:NamedIndividual;
+	rdfs:label	"Sleep_duration_micro_awakenings" ;
+	rdfs:comment	"Sleep_duration_micro_awakenings".
+
+:Sleep_count_awakenings  a owl:NamedIndividual;
+	rdfs:label	"Sleep_count_awakenings" ;
+	rdfs:comment	"Sleep_count_awakenings".
+
+:Sleep_duration_awakenings a  owl:NamedIndividual;
+	rdfs:label	"Sleep_duration_awakenings" ;
+	rdfs:comment	"Sleep_duration_awakenings".
+
+:Sleep_daily_summary a  owl:NamedIndividual;
+	rdfs:label	"Sleep_daily_summary" ;
+	rdfs:comment	"Sleep_daily_summary".
+
+:Movement_daily_summary a  owl:NamedIndividual;
+	rdfs:label	"Movement_daily_summary" ;
+	rdfs:comment	"Movement_daily_summary".
+
+:Door_daily_summary a  owl:NamedIndividual;
+	rdfs:label	"Door_daily_summary" ;
+	rdfs:comment	"Door_daily_summary".
+
+:Toilet_daily_summary  a owl:NamedIndividual;
+	rdfs:label	"Toilet_daily_summary " ;
+	rdfs:comment	"Toilet_daily_summary ".
+
+:Sit_daily_summary a  owl:NamedIndividual;
+	rdfs:label	"Sit_daily_summary" ;
+	rdfs:comment	"Sit_daily_summary".
+
+:Sleep_hourly_summary  a owl:NamedIndividual;
+	rdfs:label	"Sleep_hourly_summary" ;
+	rdfs:comment	"Sleep_hourly_summary".
+
+:Movement_hourly_summary a  owl:NamedIndividual;
+	rdfs:label	"Movement_hourly_summary" ;
+	rdfs:comment	"Movement_hourly_summary".
+
+:Door_hourly_summary a  owl:NamedIndividual;
+	rdfs:label	"Door_hourly_summary " ;
+	rdfs:comment	"Door_hourly_summary ".
+
+:Toilet_hourly_summary a  owl:NamedIndividual;
+	rdfs:label	"Toilet_hourly_summary " ;
+	rdfs:comment	"Toilet_hourly_summary ".
+
+:Sit_hourly_summary  a owl:NamedIndividual;
+	rdfs:label	"Sit_hourly_summary" ;
+	rdfs:comment	"Sit_hourly_summary".
+
+:Sleep_hourly_probability_model  a owl:NamedIndividual;
+	rdfs:label	"Sleep_hourly_probability_model" ;
+	rdfs:comment	"Sleep_hourly_probability_model".
+
+:Movement_hourly_probability_model a  owl:NamedIndividual;
+	rdfs:label	"Movement_hourly_probability_model " ;
+	rdfs:comment	"Movement_hourly_probability_model ".
+
+:Door_hourly_probability_model a  owl:NamedIndividual;
+	rdfs:label	"Door_hourly_probability_model " ;
+	rdfs:comment	"Door_hourly_probability_model ".
+
+:Toilet_hourly_probability_model  a owl:NamedIndividual;
+	rdfs:label	"Toilet_hourly_probability_model" ;
+	rdfs:comment	"Toilet_hourly_probability_model".
+
+:Sit_hourly_probability_model a  owl:NamedIndividual;
+	rdfs:label	"Sit_hourly_probability_model" ;
+	rdfs:comment	"Sit_hourly_probability_model".
+
+:Sleep_hourly_abnormal_score a  owl:NamedIndividual;
+	rdfs:label	"Sleep_hourly_abnormal_score " ;
+	rdfs:comment	"Sleep_hourly_abnormal_score ".
+
+:Movement_hourly_abnormal_score  a owl:NamedIndividual;
+	rdfs:label	"Movement_hourly_abnormal_score" ;
+	rdfs:comment	"Movement_hourly_abnormal_score".
+
+:Door_hourly_abnormal_score a  owl:NamedIndividual;
+	rdfs:label	"Door_hourly_abnormal_score" ;
+	rdfs:comment	"Door_hourly_abnormal_score".
+
+:Toilet_hourly_abnormal_score  a owl:NamedIndividual;
+	rdfs:label	"Toilet_hourly_abnormal_score" ;
+	rdfs:comment	"Toilet_hourly_abnormal_score".
+
+:Sit_hourly_abnormal_score a  owl:NamedIndividual;
+	rdfs:label	"Sit_hourly_abnormal_score" ;
+	rdfs:comment	"Sit_hourly_abnormal_score".
+
+:count_sleeps a  owl:NamedIndividual;
+	rdfs:label	"count_sleeps" ;
+	rdfs:comment	"count_sleeps".
+
+:duration_min_sleep  a owl:NamedIndividual;
+	rdfs:label	"duration_min_sleep" ;
+	rdfs:comment	"duration_min_sleep".
+
+:duration_max_sleep a  owl:NamedIndividual;
+	rdfs:label	"duration_max_sleep" ;
+	rdfs:comment	"duration_max_sleep".
+
+:ADL_score a  owl:NamedIndividual;
+	rdfs:label	"ADL_score" ;
+	rdfs:comment	"ADL_score".
+
+:ADL_score_low_warning a  owl:NamedIndividual;
+	rdfs:label	"ADL_score_low_warning" ;
+	rdfs:comment	"ADL_score_low_warning".
+
+:ADL_score_high_warning  a owl:NamedIndividual;
+	rdfs:label	"ADL_score_high_warning" ;
+	rdfs:comment	"ADL_score_high_warning".
+
+:ADL_score_low_alert a  owl:NamedIndividual;
+	rdfs:label	"ADL_score_low_alert" ;
+	rdfs:comment	"ADL_score_low_alert".
+
+:ADL_score_high_alert a  owl:NamedIndividual;
+	rdfs:label	"ADL_score_high_alert " ;
+	rdfs:comment	"ADL_score_high_alert ".
+
+:Sleep_daily_anonaly  a owl:NamedIndividual;
+	rdfs:label	"Sleep_daily_anonaly" ;
+	rdfs:comment	"Sleep_daily_anonaly".
+
+:Movement_daily_anomaly a  owl:NamedIndividual;
+	rdfs:label	"Movement_daily_anomaly" ;
+	rdfs:comment	"Movement_daily_anomaly".
+
+:Door_daily_anomaly a  owl:NamedIndividual;
+	rdfs:label	"Door_daily_anomaly" ;
+	rdfs:comment	"Door_daily_anomaly".
+
+:Toilet_daily_anomaly  a owl:NamedIndividual;
+	rdfs:label	"Toilet_daily_anomaly" ;
+	rdfs:comment	"Toilet_daily_anomaly".
+
+:Sit_daily_anomaly a  owl:NamedIndividual;
+	rdfs:label	"Sit_daily_anomaly" ;
+	rdfs:comment	"Sit_daily_anomaly".
+
+:Bed_Battery a  owl:NamedIndividual;
+	rdfs:label	"Bed_Battery" ;
+	rdfs:comment	"Bed_Battery".
+
+:Presence_Battery a  owl:NamedIndividual;
+	rdfs:label	"Presence_Battery" ;
+	rdfs:comment	"Presence_Battery".
+
+:Door_Battery a  owl:NamedIndividual;
+	rdfs:label	"Door_Battery" ;
+	rdfs:comment	"Door_Battery".
+
+:Toilet_Battery a  owl:NamedIndividual;
+	rdfs:label	"Toilet_Battery" ;
+	rdfs:comment	"Toilet_Battery".
+
+:Chair_Battery a  owl:NamedIndividual;
+	rdfs:label	"Chair_Battery" ;
+	rdfs:comment	"Chair_Battery".
+
+:Bed_Data_quality  a owl:NamedIndividual;
+	rdfs:label	"Bed_Data_quality" ;
+	rdfs:comment	"Bed_Data_quality".
+
+:Presence_Data_quality  a owl:NamedIndividual;
+	rdfs:label	"Presence_Data_quality" ;
+	rdfs:comment	"Presence_Data_quality".
+
