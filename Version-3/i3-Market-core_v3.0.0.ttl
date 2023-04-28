@@ -1,0 +1,1114 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix core:	<http://i3-market.eu/backplane/core/> .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix common: <http://schema.big-iot.org/common/> .
+@prefix schema:	<http://schema.org/> .
+@prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ns: <http://creativecommons.org/ns#>.
+@prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#>.
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix qudt: <http://data.qudt.org/qudt/owl/1.0.0/unit.owl#>.
+@prefix dul: <http://www.loa.istc.cnr.it/ontologies/DUL.owl#>.
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix vann: <http://purl.org/vocab/vann/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix itso: <http://www.owl-ontologies.com/itso> .
+@prefix pricingmodel: <http://i3-market.eu/backplane/pricingmodel> .
+
+##==     import <https://www.w3.org/TR/vocab-dcat-3#>   i3-Market core uses DCAT vocabulary for DataSet, DataDistribution, DataService blocks.   ==##
+
+<http://i3-market.eu/backplane/core/> a owl:Ontology ;
+ dc:contributor "Achille Zappa, University of Galway, DSI, Insight Centre, Galway, Ireland"@en;
+            dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;                
+            dc:description ""@en;
+            dc:rights "Copyright NUIGalway";
+            dc:title " Core Model"@en;
+            dcterms:issued "2020"^^xsd:date;
+            dcterms:modified "2023"^^xsd:date;
+            vann:preferredNamespacePrefix "core";
+            vann:preferredNamespaceUri "http://i3-market.eu/backplane/core/";
+            a owl:Ontology;
+            rdfs:comment " "@en;
+            rdfs:label ""^^xsd:string;
+            owl:versionInfo "3.0.0".
+
+
+
+####################################### 
+##===================================##
+##==    DataMarketPlace - Module   ==##
+##===================================##
+####################################### 
+
+## ==================================== ##
+## ==  DataMarket - Classes      == ##
+## ==================================== ## 
+
+core:DataMarket	rdf:type	rdfs:Class ;
+	rdfs:label	"DataMarket" ;
+	rdfs:comment	"Data Marketplace information."  .
+
+
+## ==================================== ##
+## ==     DataMarket  - Properties   == ##
+## ==================================== ## 
+
+core:marketId	rdf:type	rdf:Property ;
+	rdfs:label	"MarketId" ;
+	rdfs:comment	"Data Market identifier." ;
+	rdfs:domain	core:DataMarket ;
+	rdfs:range 	rdfs:Literal .
+
+core:dataMarketNode rdf:type	rdf:Property ;
+	rdfs:label	"DataMarketNode" ;
+	rdfs:comment	"Information on Data Marketplace Node" ;
+	rdfs:domain	core:Provider ;
+	rdfs:range 	core:Organization .
+	
+core:dataMarketName rdf:type	rdf:Property ;
+	rdfs:label	"DataMarketName" ;
+	rdfs:comment	"Data Marketplace Name." ;
+	rdfs:domain	core:DataMarket ;
+	rdfs:range 	rdfs:Literal .
+	
+
+core:dataMarketDescription rdf:type	rdf:Property ;
+	rdfs:label	"DataMarketDescription" ;
+	rdfs:comment	"Data Marketplace Description." ;
+	rdfs:domain	core:Provider ;
+	rdfs:range 	rdfs:Literal .	
+
+
+
+####################################### 
+##===================================##
+##==         Provider - Module     ==##
+##===================================##
+####################################### 
+
+## ==================================== ##
+## ==  Provider - Classes      == ##
+## ==================================== ## 
+
+core:Provider	rdf:type	rdfs:Class ;
+	rdfs:label	"Provider" ;
+	rdfs:comment	"Providers register their DataOfferings on a marketplace and provides access to the offered resources via a common API."  .
+
+
+## ==================================== ##
+## ==  Provider  - Properties   == ##
+## ==================================== ## 
+
+core:providerId	rdf:type	rdf:Property ;
+	rdfs:label	"providerId" ;
+	rdfs:comment	"Provider identifier." ;
+	rdfs:domain	core:Provider ;
+	rdfs:range 	rdfs:Literal .
+
+core:sourceOrganization rdf:type	rdf:Property ;
+	rdfs:label	"sourceOrganization" ;
+	rdfs:comment	"sourceOrganization" ;
+	rdfs:domain	core:Provider ;
+	rdfs:range 	core:Organization .
+
+
+
+core:dataOffering	rdf:type	rdf:Property ;
+	rdfs:label	"dataOffering" ;
+	rdfs:comment	"Relation between an DataOffering and the provider who registered it." ;
+	rdfs:domain	core:Provider ;
+	rdfs:range 	core:DataOffering .
+	
+	
+core:providerName rdf:type	rdf:Property ;
+	rdfs:label	"ProviderName" ;
+	rdfs:comment	"Provider Name." ;
+	rdfs:domain	core:Provider ;
+	rdfs:range 	rdfs:Literal .
+	
+
+core:providerDescription rdf:type	rdf:Property ;
+	rdfs:label	"providerDescription" ;
+	rdfs:comment	"Provider Description." ;
+	rdfs:domain	core:Provider ;
+	rdfs:range 	rdfs:Literal .	
+
+
+
+
+
+
+####################################### 
+##===================================##
+##==         Consumer - Module     ==##
+##===================================##
+####################################### 
+
+## ==================================== ##
+## ==  Consumer - Classes      == ##
+## ==================================== ## 
+
+core:Consumer	rdf:type	rdfs:Class ;
+	rdfs:label	"Consumer" ;
+	rdfs:comment	"Consumers discover and subscribe to DataOfferings of interest via api / interfaces in order to access the resources."  .
+
+
+	
+
+## ==================================== ##
+## ==  Consumer  - Properties   == ##
+## ==================================== ## 
+
+core:consumerId	rdf:type	rdf:Property ;
+	rdfs:label	"consumerId" ;
+	rdfs:comment	"IDentifier on a BIG-IoT marketplace of a consumer." ;
+	rdfs:domain	core:Consumer ;
+	rdfs:range 	rdfs:Literal .
+	
+
+core:dataOfferingQuery	rdf:type	rdf:Property ;
+	rdfs:label	"DataOfferingQuery" ;
+	rdfs:comment	"Concepts likely to be involved in DataOfferings of a certain category." ;
+	schema:inverseOf	core:isRegisteredBy ;
+	rdfs:domain	core:Consumer ;
+	rdfs:range 	core:DataOfferingQuery .
+	
+core:consumerName rdf:type	rdf:Property ;
+	rdfs:label	"consumerName" ;
+	rdfs:comment	"consumer Name." ;
+	rdfs:domain	core:Consumer ;
+	rdfs:range 	rdfs:Literal .
+	
+
+core:consumerDescription rdf:type	rdf:Property ;
+	rdfs:label	"consumerDescription" ;
+	rdfs:comment	"consumer Description." ;
+	rdfs:domain	core:Consumer ;
+	rdfs:range 	rdfs:Literal .
+
+
+
+core:sourceOrganization rdf:type	rdf:Property ;
+	rdfs:label	"sourceOrganization" ;
+	rdfs:comment	"sourceOrganization" ;
+	rdfs:domain	core:Consumer ;
+	rdfs:range 	core:Organization .
+
+core:subscribedTo rdf:type	rdf:Property ;
+	rdfs:label	"subscribedTo" ;
+	rdfs:comment	"subscribedTo" ;
+	rdfs:domain	core:Consumer ;
+	rdfs:range 	core:DataOffering .
+
+
+
+
+
+####################################### 
+##===================================##
+##==         Owner - Module        ==##
+##===================================##
+####################################### 
+
+## ==================================== ##
+## ==  Owner - Classes      == ##
+## ==================================== ## 
+
+core:Owner	rdf:type	rdfs:Class ;
+	rdfs:label	"Owner" ;
+	rdfs:comment	"The original Owner of the Data that make available via providers and provides access to the offered resources via a common API." .
+
+
+## ==================================== ##
+## ==  Owner - Properties   == ##
+## ==================================== ## 
+
+core:ownerId	rdf:type	rdf:Property ;
+	rdfs:label	"ownerId" ;
+	rdfs:comment	"ownerId identifier." ;
+	rdfs:domain	core:Owner ;
+	rdfs:range 	rdfs:Literal .
+
+core:ownerName rdf:type	rdf:Property ;
+	rdfs:label	"ownerName" ;
+	rdfs:comment	"owner Name." ;
+	rdfs:domain	core:Owner ;
+	rdfs:range 	rdfs:Literal .
+	
+
+core:ownerDescription rdf:type	rdf:Property ;
+	rdfs:label	"ownerescription" ;
+	rdfs:comment	"owner Description." ;
+	rdfs:domain	core:Owner ;
+	rdfs:range 	rdfs:Literal .
+	
+
+
+core:sourceOrganization rdf:type	rdf:Property ;
+	rdfs:label	"sourceOrganization" ;
+	rdfs:comment	"sourceOrganization" ;
+	rdfs:domain	core:Owner ;
+	rdfs:range 	core:Organization .
+
+
+
+####################################### 
+##===================================##
+##==       Organization  - Module     ==##
+##===================================##
+####################################### 
+
+## ==================================== ##
+## ==  Organization  - Classes      == ##
+## ==================================== ## 
+
+core:Organization	rdf:type	rdfs:Class ;
+	rdfs:label	"Organization" ;
+	rdfs:comment	"Organization"  .
+
+
+	
+
+## ==================================== ##
+## ==  Organization  - Properties   == ##
+## ==================================== ## 
+
+core:organizationId	rdf:type	rdf:Property ;
+	rdfs:label	"organizationID" ;
+	rdfs:comment	"organizationId identifier." ;
+	rdfs:domain	core:Organization ;
+	rdfs:range 	rdfs:Literal .
+
+core:organizationName rdf:type	rdf:Property ;
+	rdfs:label	"organizationName" ;
+	rdfs:comment	"organizationName" ;
+	rdfs:domain	core:Organization ;
+	rdfs:range 	rdfs:Literal .
+	
+
+core:address rdf:type	rdf:Property ;
+	rdfs:label	"address" ;
+	rdfs:comment	"address" ;
+	rdfs:domain	core:Organization ;
+	rdfs:range 	rdfs:Literal .
+
+
+core:organizationDescription rdf:type	rdf:Property ;
+	rdfs:label	"organizationDescription" ;
+	rdfs:comment	"organizationDescription" ;
+	rdfs:domain	core:Organization ;
+	rdfs:range 	rdfs:Literal .
+	
+
+core:contactPoint rdf:type	rdf:Property ;
+	rdfs:label	"contactPoint" ;
+	rdfs:comment	"contactPoint" ;
+	rdfs:domain	core:Organization ;
+	.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####################################### 
+##===================================##
+##==    Data Offering - Module     ==##
+##===================================##
+####################################### 
+
+
+## ==================================== ##
+## ==  Data Offering - Classes      == ##
+## ==================================== ## 
+
+core:Categorization	rdf:type	rdfs:Class ;
+	rdf:comment	"An Hierarchy of DataOffering categories" ;
+	rdf:label	"Categorization" .
+
+
+core:DataOffering	rdf:type	rdfs:Class ;
+	rdfs:label	"DataOffering" ;
+	rdfs:comment	" DataOffering represent the ata Assets that are offered on a marketplace." ;
+	rdfs:subClassOf	schema:Offer .
+	
+core:DataOfferingCategory	rdf:type	rdfs:Class ;
+	rdfs:label	"DataOfferingCategory" ;
+	rdfs:comment	"Category of an DataOffering."  .
+	
+core:DataOfferingQuery	rdf:type	rdfs:Class ;
+	rdfs:label	"DataOfferingQuery" ;
+	rdfs:comment	"Consumers discover DataOfferings they're interesting through the marketplace by providing an (DataOffering) query. The query entails a specification of the type of DataOfferings the consumer is interested in" ;
+	rdfs:subClassOf	schema:Demand .
+	
+core:DataOfferingSubscription	rdf:type	rdfs:Class ;
+	rdfs:label	"DataOfferingSubscription" ;
+	rdfs:comment	"Subscription of a consumer to a specific DataOffering registered by a provider." .
+
+
+
+
+
+
+## ==================================== ##
+## ==  Data Offering - Properties   == ##
+## ==================================== ## 
+
+core:hasPricingModel	rdf:type	rdf:Property ;
+	rdfs:label	"hasPricingModel" ;
+	rdfs:comment	"Relation between an DataOffering and the PricingModel." ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	pricingmodel:PricingModel .
+
+
+core:hasDataset	rdf:type	rdf:Property ;
+	rdfs:label	"hasCatalog" ;
+	rdfs:comment	"A Catalog that is described in the Data Offering." ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	dcat:Dataset .
+
+core:category	rdf:type	rdf:Property ;
+	rdfs:label	"category" ;
+	rdfs:comment	"A category for the Data Offering." ;
+	rdfs:domain	core:DataOffering ;
+	 .
+
+core:dataOfferingDescription	rdf:type	rdf:Property ;
+	rdfs:label	"dataOfferingDescription" ;
+	rdfs:comment	"data Offering Description." ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	rdfs:Literal .
+	
+core:dataOfferingTitle rdf:type	rdf:Property ;
+	rdfs:label	"dataOfferingTitle" ;
+	rdfs:comment	"data Offering Title" ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	rdfs:Literal .
+	
+core:dataOfferingLabel	rdf:type	rdf:Property ;
+	rdfs:label	"dataOfferingLabel" ;
+	rdfs:comment	"data Offering Label" ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	rdfs:Literal .
+	
+	
+core:status	rdf:type	rdf:Property ;
+	rdfs:label	"status" ;
+	rdfs:comment	"An DataOffering status Possible values:Active: The offer is active and visible to everyone. Inactive: The offer is not visible, but still exists and can be activated again. ToBeDeleted: Data offer is still available and visible, but will be deleted once the last contract on this offer expired. No new purchases allowed on it. Deleted: The offer is not visible and cannot be activated again. No longer available for consumers or providers." ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	rdfs:Literal.
+	
+core:provider	rdf:type	rdf:Property ;
+	rdfs:label	"Data Provider" ;
+	rdfs:comment	"Relation between an DataOffering and the provider who registered it." ;
+	owl:inverseOf core:provide ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	core:Provider .
+	
+core:owner	rdf:type	rdf:Property ;
+	rdfs:label	"Data Owner" ;
+	rdfs:comment	"Relation between an DataOffering and the owner of the datasets." ;
+	owl:inverseOf core:own ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	core:Owner .
+	
+
+core:providerDid	rdf:type	rdf:Property ;
+	rdfs:label	"ProviderDid" ;
+	rdfs:comment	"The Provider Did" ;
+	owl:inverseOf core:provide ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	core:Provider .
+	
+core:marketDid	rdf:type	rdf:Property ;
+	rdfs:label	"Data market Did" ;
+	rdfs:comment	"The Data market Did" ;
+	owl:inverseOf core:own ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	core:Owner .
+
+core:ownerDid	rdf:type	rdf:Property ;
+	rdfs:label	"Data owner Did" ;
+	rdfs:comment	"The Data owner Did" ;
+	owl:inverseOf core:own ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	core:Owner .
+
+core:marketId	rdf:type	rdf:Property ;
+	rdfs:label	"Market Name Id" ;
+	rdfs:comment	"The Data market name Id" ;
+	owl:inverseOf core:provide ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	core:Provider .
+
+
+
+
+core:dataOfferingCreated rdf:type	rdf:Property ;
+	rdfs:label	"dataOfferingCreated" ;
+	rdfs:comment	"Date of formal issuance (e.g., publication) of the data offering." ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	xsd:DateTime .
+	
+
+
+core:lastModified rdf:type	rdf:Property ;
+	rdfs:label	"lastModified" ;
+	rdfs:comment	"Most recent date on which the data offering was changed, updated or modified." ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	xsd:DateTime .
+	
+
+
+core:ownerConsentForm	rdf:type	rdf:Property ;
+	rdfs:label	"ownerConsentForm" ;
+	rdfs:comment	"Hashtag string to report the information about the explicit user consent form documentations." ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	xsd:boolean.
+
+core:personalData	rdf:type	rdf:Property ;
+	rdfs:label	"personalData" ;
+	rdfs:comment	"To define if the data offering offer dataset that contain personal data" ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	xsd:boolean.
+
+	
+core:active	rdf:type	rdf:Property ;
+	rdfs:label	"active" ;
+	rdfs:comment	"boolean to define if the DataOffering is ready to be visible." ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	xsd:boolean.
+
+core:inSharedNetwork	rdf:type	rdf:Property ;
+	rdfs:label	"inSharedNetwork" ;
+	rdfs:comment	"boolean to define if the DataOffering is shared by Marketplace to be visible and consumable by all actors in the i3-Market Network." ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	xsd:boolean.
+	
+core:inNode	rdf:type	rdf:Property ;
+	rdfs:label	"inNode" ;
+	rdfs:comment	"Identify the Node of the originated Market DataOffering Actor in the network." ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	rdfs:Literal.
+	
+	
+	
+
+core:dataOfferingExpirationTime	rdf:type	rdf:Property ;
+	rdfs:label	"DataOfferingExpirationTime" ;
+	rdfs:comment	"Expiration time." ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	xsd:DateTime .
+	
+core:dataOfferingId	rdf:type	rdf:Property ;
+	rdfs:label	"DataOfferingID" ;
+	rdfs:comment	"DataOffering identifier." ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	rdfs:Literal .
+
+
+
+core:contractParameters	rdf:type	rdf:Property ;
+	rdfs:label	"contractParameters" ;
+	rdfs:comment	"contractParameters" ;
+	rdfs:domain	core:DataOffering ;
+	rdfs:range 	core:ContractParameters . 
+	
+
+## ==================================== ##
+## ==  ContractParameters  - Classes      == ##
+## ==================================== ## 
+
+
+core:ContractParameters	rdf:type	rdfs:Class ;
+	rdf:comment	"Contract Parameters" ;
+	rdf:label	"ContractParameters" .
+
+
+
+
+
+## ==================================== ##
+## ==  ContractParameters - Properties   == ##
+## ==================================== ## 
+
+core:interestOfProvider 	rdf:type	rdf:Property ;
+	rdfs:label	"interestOfProvider" ;
+	rdfs:comment	"This property is used to identify the interest of the data owner. The following possibilities exist: - Free Sharing  -Quotation  -Selling of data (e.g. just earning money by selling the data, no specific feedback on these data by a data consumer expected)" ;
+	rdfs:domain	core:ContractParameters ;
+	rdfs:range 	rdfs:Literal . ## =========== Quotation - Sharing - Selling ========================= ##
+	
+core:interestDescription 	rdf:type	rdf:Property ;
+	rdfs:label	"interestDescription" ;
+	rdfs:comment	"Data provider can specify which sort of quotation he wants exactly, e.g., quotation for maintenance service or quotation for optimization of production " ;
+	rdfs:domain	core:ContractParameters ;
+	rdfs:range 	rdfs:Literal .
+
+
+core:hasGoverningJurisdiction 	rdf:type	rdf:Property ;
+	rdfs:label	"hasGoverningJurisdiction " ;
+	rdfs:comment	"hasGoverningJurisdiction " ;
+	rdfs:domain	core:ContractParameters ;
+	rdfs:range 	rdfs:Literal .
+
+
+core:purpose	rdf:type	rdf:Property ;
+	rdfs:label	"purpose" ;
+	rdfs:comment	"purpose" ;
+	rdfs:domain	core:ContractParameters ;
+	rdfs:range 	rdfs:Literal .
+		
+
+core:purposeDescription rdf:type	rdf:Property ;
+	rdfs:label	"ContractPurposeDescriptio" ;
+	rdfs:comment	"ContractPurposeDescriptio" ;
+	rdfs:domain	core:ContractParameters ;
+	rdfs:range 	rdfs:Literal .
+	
+
+core:hasIntendedUse rdf:type	rdf:Property ;
+	rdfs:label	"hasIntendedUse" ;
+	rdfs:comment	"hasIntendedUse" ;
+	rdfs:domain	core:ContractParameters ;
+	rdfs:range 	core:IntendedUse .
+
+core:hasLicenseGrant rdf:type	rdf:Property ;
+	rdfs:label	"hasLicenseGrant" ;
+	rdfs:comment	"hasLicenseGrant" ;
+	rdfs:domain	core:ContractParameters ;
+	rdfs:range 	core:LicenseGrant .	
+	
+	## ==================================== ##
+## ==  LicenseGrant - Classes      == ##
+## ==================================== ## 
+
+core:LicenseGrant	rdf:type	rdfs:Class ;
+	rdfs:label	"LicenseGrant" ;
+	rdfs:comment	"License Grant" ;
+	 .
+
+## ==================================== ##
+## ==  LicenseGrant - Properties   == ##
+## ==================================== ## 
+
+core:paidUp	rdf:type	rdf:Property ;
+	rdfs:label	"paidUp" ;
+	rdfs:comment	"paidUp" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## =========== True or False ========================= ##
+
+
+core:transferable	rdf:type	rdf:Property ;
+	rdfs:label	"transferable" ;
+	rdfs:comment	"transferable" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================ True or False ==================== ##
+
+core:exclusiveness	rdf:type	rdf:Property ;
+	rdfs:label	"exclusiveness" ;
+	rdfs:comment	"exclusiveness" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================= True or False =================== ##
+	
+core:revocable	rdf:type	rdf:Property ;
+	rdfs:label	"revocable" ;
+	rdfs:comment	"revocable" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================= True or False =================== ##
+	
+
+
+
+
+
+
+core:processing	rdf:type	rdf:Property ;
+	rdfs:label	"processing" ;
+	rdfs:comment	"processing" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================= True or False =================== ##
+	
+	
+core:modifying	rdf:type	rdf:Property ;
+	rdfs:label	"modifying" ;
+	rdfs:comment	"modifying" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================= True or False =================== ##
+	
+	
+core:analyzing	rdf:type	rdf:Property ;
+	rdfs:label	"analyzing" ;
+	rdfs:comment	"analyzing" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================= True or False =================== ##
+	
+	
+core:storingData	rdf:type	rdf:Property ;
+	rdfs:label	"storingData" ;
+	rdfs:comment	"storingData" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================= True or False =================== ##
+	
+core:storingCopy	rdf:type	rdf:Property ;
+	rdfs:label	"storingCopy" ;
+	rdfs:comment	"storingCopy" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================= True or False =================== ##
+	
+core:reproducing	rdf:type	rdf:Property ;
+	rdfs:label	"reproducing" ;
+	rdfs:comment	"reproducing" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================= True or False =================== ##
+	
+core:distributing	rdf:type	rdf:Property ;
+	rdfs:label	"distributing" ;
+	rdfs:comment	"distributing" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================= True or False =================== ##
+	
+core:loaning	rdf:type	rdf:Property ;
+	rdfs:label	"loaning" ;
+	rdfs:comment	"loaning" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================= True or False =================== ##
+	
+core:selling	rdf:type	rdf:Property ;
+	rdfs:label	"selling" ;
+	rdfs:comment	"selling" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================= True or False =================== ##
+
+core:renting	rdf:type	rdf:Property ;
+	rdfs:label	"renting" ;
+	rdfs:comment	"renting" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================= True or False =================== ##
+	
+core:furtherLicensing	rdf:type	rdf:Property ;
+	rdfs:label	"furtherLicensing" ;
+	rdfs:comment	"furtherLicensing" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================= True or False =================== ##
+	
+
+core:leasing	rdf:type	rdf:Property ;
+	rdfs:label	"leasing" ;
+	rdfs:comment	"leasing" ;
+	rdfs:domain	core:LicenseGrant ;
+	rdfs:range 	xsd:boolean . ## ================= True or False =================== ##
+
+
+
+
+
+## ==================================== ##
+## ==  IntendedUse - Classes      == ##
+## ==================================== ## 
+
+core:IntendedUse	rdf:type	rdfs:Class ;
+	rdfs:label	"IntendedUse" ;
+	rdfs:comment	"Intended Use of the data" ;
+	 .
+
+
+
+
+## ==================================== ##
+## ==  IntendedUse - Properties   == ##
+## ==================================== ## 
+
+core:processData	rdf:type	rdf:Property ;
+	rdfs:label	"processData" ;
+	rdfs:comment	"processData" ;
+	rdfs:domain	core:IntendedUse ; 
+	rdfs:range 	xsd:boolean . ## =========== True or False ========================= ##
+
+core:shareDataWithThirdParty	rdf:type	rdf:Property ;
+	rdfs:label	"shareDataWithThirdParty" ;
+	rdfs:comment	"shareDataWithThirdParty" ;
+	rdfs:domain	core:IntendedUse ;
+	rdfs:range 	xsd:boolean . ## =========== True or False ========================= ##
+	
+core:editData	rdf:type	rdf:Property ;
+	rdfs:label	"editData" ;
+	rdfs:comment	"editData" ;
+	rdfs:domain	core:IntendedUse ;
+	rdfs:range 	xsd:boolean . ## =========== True or False ========================= ##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####################################### 
+##===================================##
+##=  Data Offering Query - Module  ==##
+##===================================##
+####################################### 
+
+## ==================================== ##
+## ==  Data Offering Query  -      == ##
+## ==================================== ## 
+
+## == Classes
+
+core:DataOfferingQuery	rdf:type	rdfs:Class ;
+	rdfs:label	"DataOfferingQuery" ;
+	rdfs:comment	"Consumers discover DataOfferings they're interesting through the marketplace by providing an (DataOffering) query. The query entails a specification of the type of DataOfferings the consumer is interested in" ;
+	rdfs:subClassOf	schema:Demand .
+	
+
+core:QueryFilters	rdf:type	rdfs:Class ;
+	rdfs:label	"QueryFilters" ;
+	rdfs:comment	"Contains The Parameters/Properties that were chosen for the query/search of the dataofferings by Consumer" ;
+	 .
+
+
+## == Properties
+	
+core:isRegisteredBy	rdf:type	rdf:Property ;
+	rdfs:label	"isRegisteredBy" ;
+	rdfs:comment	"Relation between an DataOfferingQuery and the consumer who registered it." ;
+	rdfs:domain	core:DataOfferingQuery ;
+	rdfs:range 	core:Consumer .
+
+
+core:queryName	rdf:type	rdf:Property ;
+	rdfs:label	"queryName" ;
+	rdfs:comment	"DataOffering query name." ;
+	rdfs:domain	core:DataOfferingQuery ;
+	rdfs:range 	rdfs:Literal .	
+
+core:queryFilters rdf:type	rdf:Property ;
+	rdfs:label	"queryFilters" ;
+	rdfs:comment	"queryFilters" ;
+	rdfs:domain	core:DataOfferingQuery ;
+	rdfs:range 	core:QueryFilters .	
+
+	
+	
+core:queryId	rdf:type	rdf:Property ;
+	rdfs:label	"queryId" ;
+	rdfs:comment	"DataOffering query identifier." ;
+	rdfs:domain	core:DataOfferingQuery ;
+	rdfs:range 	rdfs:Literal .	
+
+
+
+
+
+
+
+
+
+
+####################################### 
+##===================================##
+##=  Data Offering Subscription - Module  ==##
+##===================================##
+####################################### 
+
+## ==================================== ##
+## ==  DataOfferingSubscription  -      == ##
+## ==================================== ## 
+
+## == Classes
+
+core:DataOfferingSubscription	rdf:type	rdfs:Class ;
+	rdfs:label	"DataOfferingSubscription" ;
+	rdfs:comment	"Subscription of a consumer to a specific DataOffering registered by a provider."  .
+	
+
+## == Properties
+
+core:subscribedQuery	rdf:type	rdf:Property ;
+	rdfs:label	"subscribedQuery" ;
+	rdfs:comment	"Relation between an DataOffering subscription and the DataOffering query that matched the DataOffering." ;
+	rdfs:domain	core:DataOfferingSubscription ;
+	rdfs:range 	core:DataOfferingQuery .
+	
+core:subscribesTo	rdf:type	rdf:Property ;
+	rdfs:label	"subscribesTo" ;
+	rdfs:comment	"Relation between a subscription and the DataOffering it subscribes to." ;
+	rdfs:domain	core:DataOfferingSubscription ;
+	rdfs:range 	core:DataOffering .
+	
+core:subscriptionId	rdf:type	rdf:Property ;
+	rdfs:label	"subscriptionID" ;
+	rdfs:comment	"Subscription identifier." ;
+	rdfs:domain	core:DataOfferingSubscription ;
+	rdfs:range 	rdfs:Literal .
+
+
+
+
+
+
+
+
+
+
+
+
+## ==================================== ##
+## ==  Extra DCAT extension  - Properties      == ##
+## ==================================== ## 
+
+
+
+core:dataExchangeSpec	rdf:type	rdf:Property ;
+	rdfs:label	"dataExchangeSpec" ;
+	rdfs:comment	"Data Exchange Specifications" ;
+	rdfs:domain	dcat:DataService ;
+	rdfs:range 	core:DataExchangeSpec .
+	
+	
+
+core:serviceSpecs	rdf:type	rdf:Property ;
+	rdfs:label	"serviceSpecs" ;
+	rdfs:comment	"Relation between an DataService and the serviceSpecs." ;
+	rdfs:domain	dcat:DataService ;
+	rdfs:range 	itso:ServiceSpecs .
+	
+
+core:serviceId	rdf:type	rdf:Property ;
+	rdfs:label	"serviceId" ;
+	rdfs:comment	"service Id" ;
+	rdfs:domain	dcat:DataService ;
+	rdfs:range 	rdfs:Literal .
+
+
+core:datasetInformation	rdf:type	rdf:Property ;
+	rdfs:label	"Dataset Information" ;
+	rdfs:comment	"More specific dasasets information annotations for types of info to describe specific details of the dataset." ;
+	rdfs:domain	dcat:Dataset ;
+	rdfs:range 	core:DatasetInformation .
+
+
+
+core:downloadType	rdf:type	rdf:Property ;
+	rdfs:label	"Download Type" ;
+	rdfs:comment	"Download Type (if means Frequency as 'Stream' or 'Bulk' dataset download)" ;
+	rdfs:domain	dcat:Distribution ;
+	 .
+core:dataStream	rdf:type	rdf:Property ;
+	rdfs:label	"dataStream" ;
+	rdfs:comment	"Boolean attribute to check if the dataset is offered as stream or not" ;
+	rdfs:domain	dcat:Distribution ;
+	rdfs:range 	xsd:boolean.
+
+
+core:datasetRecord	rdf:type	rdf:Property ;
+	rdfs:label	"Data Record" ;
+	rdfs:comment	"The annotations of data records types which represent attributes of observations , measurements , fields,.. in the dataset." ;
+	rdfs:domain	dcat:Dataset ;
+	rdfs:range 	core:DatasetRecord .
+
+
+
+
+## ==================================== ========================================================================##
+## ==  Extra DCAT extension  - Data Exchange Spec Class - Properties      == ##
+## ==================================== ========================================================================## 
+
+core:DataExchangeSpec rdf:type	rdfs:Class ;
+vann:usageNote "Class for kind of a service level specification of the secure data exchange and unequivocally set the cryptographic algorithms that will be used, and the maximum acceptable delays for the proper reception of the data blocks that will be exchanged."@en;
+ rdfs:comment "Kind of a service level specification of the secure data exchange and unequivocally set the cryptographic algorithms that will be used, and the maximum acceptable delays for the proper reception of the data blocks that will be exchanged"@en;
+ rdfs:label "DataExchangeSpec"@en.
+
+
+
+core:encAlg	rdf:type	rdf:Property ;
+	rdfs:label	"encAlg" ;
+	rdfs:comment	"Encryption algorithm used to encrypt blocks. Either AES-128-GCM ('A128GCM') or AES-256-GCM ('A256GCM)" ;
+	rdfs:domain	core:DataExchangeSpec ;
+	 .
+
+
+core:signingAlg	rdf:type	rdf:Property ;
+	rdfs:label	"signingAlg" ;
+	rdfs:comment	"Signing algorithm used to sign the proofs. It'e ECDSA secp256r1 with key lengths: either 'ES256', 'ES384', or 'ES512' " ;
+	rdfs:domain	core:DataExchangeSpec  ;
+	 .
+
+
+core:hashAlg	rdf:type	rdf:Property ;
+	rdfs:label	"hashAlg" ;
+	rdfs:comment	"Hash algorithm used to compute digest/commitments. It's SHA2 with different output lengths: either 'SHA-256', 'SHA-384' or 'SHA-512'." ;
+	rdfs:domain	core:DataExchangeSpec  ;
+	 .
+
+
+core:ledgerContractAddress	rdf:type	rdf:Property ;
+	rdfs:label	"ledgerContractAddress" ;
+	rdfs:comment	"The ledger smart contract address (hexadecimal) on the DLT." ;
+	rdfs:domain	core:DataExchangeSpec ;
+	 .
+
+
+core:ledgerSignerAddress	rdf:type	rdf:Property ;
+	rdfs:label	"ledgerSignerAddress" ;
+	rdfs:comment	"The orig (data provider) address in the DLT (hexadecimal)." ;
+	rdfs:domain	core:DataExchangeSpec  ;
+	 .
+
+
+core:pooToPorDelay	rdf:type	rdf:Property ;
+	rdfs:label	"pooToPorDelay" ;
+	rdfs:comment	"Maximum acceptable delay between the issuance of the proof of origin (PoO) by the orig and the reception of the proof of reception (PoR) by the orig" ;
+	rdfs:domain	core:DataExchangeSpec  ;
+	 .
+
+
+core:pooToPopDelay	rdf:type	rdf:Property ;
+	rdfs:label	"pooToPopDelay" ;
+	rdfs:comment	"Maximum acceptable delay between the issuance of the proof of origin (PoP) by the orig and the reception of the proof of publication (PoR) by the dest" ;
+	rdfs:domain	core:DataExchangeSpec  ;
+	 .
+
+
+core:pooToSecretDelay	rdf:type	rdf:Property ;
+	rdfs:label	"pooToSecretDelay" ;
+	rdfs:comment	"If the dest (data consumer) does not receive the PoP, it could still get the decryption secret from the DLT. This defines the maximum acceptable delay between the issuance of the proof of origing (PoP) by the orig and the publication (block time) of the secret on the blockchain." ;
+	rdfs:domain	core:DataExchangeSpec  ;
+	 .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## ==================================================================================== ##
+## ==  Extra DCAT extension  - Data Record Class - Properties      == ##
+## ==================================================================================== ## 
+
+core:DatasetRecord rdf:type	rdfs:Class ;
+vann:usageNote "Optional  class. A description of types which represent attributes of observations , measurements , fields,.. in the dataset.."@en;
+ rdfs:comment "A record in a data set, describing types which represent attributes of observations , measurements , fields,.. in the dataset.."@en;
+ rdfs:label "Dataset Record"@en.
+
+
+
+
+## ==================================== ========================================================================##
+## ==  Extra DCAT extension  - Dataset raw data information details Class - Properties      == ##
+## ==================================== ========================================================================## 
+
+core:DatasetInformation rdf:type	rdfs:Class ;
+vann:usageNote "Optional  class. A description of types which represent attributes of observations , measurements , fields,.. in the dataset.."@en;
+ rdfs:comment "A record in a data set, describing types which represent attributes of observations , measurements , fields,.. in the dataset.."@en;
+ rdfs:label "Dataset Information"@en.
+
+
+
+core:measurementType	rdf:type	rdf:Property ;
+	rdfs:label	"measurementType" ;
+	rdfs:comment	"The  data types which represent attributes of observations , measurements ,  in the dataset." ;
+	rdfs:domain	core:DatasetInformation  ;
+	 .
+
+
+core:measurementChannelType	rdf:type	rdf:Property ;
+	rdfs:label	"measurementChannelType" ;
+	rdfs:comment	"The  data measurement Channel types  in the dataset." ;
+	rdfs:domain	core:DatasetInformation  ;
+	 .
+
+
+core:sensorId	rdf:type	rdf:Property ;
+	rdfs:label	"sensorId" ;
+	rdfs:comment	"sensorId" ;
+	rdfs:domain	core:DatasetInformation  ;
+	 .
+
+
+core:deviceId	rdf:type	rdf:Property ;
+	rdfs:label	"deviceId" ;
+	rdfs:comment	"deviceId" ;
+	rdfs:domain	core:DatasetInformation  ;
+	 .
+
+
+core:cppType	rdf:type	rdf:Property ;
+	rdfs:label	"cppType" ;
+	rdfs:comment	"cppType" ;
+	rdfs:domain	core:DatasetInformation  ;
+	 .
+
+
+core:sensorType	rdf:type	rdf:Property ;
+	rdfs:label	"sensorType" ;
+	rdfs:comment	"sensorType" ;
+	rdfs:domain	core:DatasetInformation  ;
+	 .
+
+
+
+
+
+
+
+
+## ==================================== ##
+	
+core:http_get	rdf:type	core:EndpointType ;
+	rdfs:label	"HTTP_GET" ;
+	rdfs:comment	"HTTP GET endpoint type" ;
+	skos:prefLabel	"http get" .
+	
+core:http_post	rdf:type	core:EndpointType ;
+	rdfs:label	"HTTP_POST" ;
+	rdfs:comment	"HTTP POST endpoint type" ;
+	skos:prefLabel	"http post" .
+	
